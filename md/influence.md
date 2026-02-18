@@ -22,7 +22,7 @@ People respond better when they feel they have a choice. Rather than saying, *�
 ### 4. Remember Names  
 A person’s name is, to them, the sweetest sound in any language. Remember it, use it, and watch people instantly warm up to you. It’s a small habit that builds trust.  
 
----
+***
 
 ### 5. Talk in Terms of Others’ Interests  
 The fastest way to someone’s heart is by talking about what *they* care about. Ask questions, show curiosity, and encourage people to share their passions. When you focus on others, connections deepen naturally.

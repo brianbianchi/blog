@@ -1,80 +1,108 @@
-# QR codes
+# QR Codes
 
-Quick response, or QR, is a type of barcode that can store a multitude of information. [docs](https://www.qr-code-generator.com/solutions/)
+Quick Response (QR) codes are a type of two-dimensional barcode that can store URLs, text, contact information, Wi-Fi credentials, and more. They bridge the physical and digital worlds by letting your phone instantly open a URL, send an SMS, or connect to a network just by scanning with your native camera app.
 
-## URL
+***
+
+## Common QR Code Types
+
+Below are the most useful QR code formats you can generate and use today. You can test them easily with a free QR code generator or command-line tools.
+
+***
+
+### 1. URL
+
+Directs users to a specific web page.  
+Example:
 
 ```
 https://www.google.com/
 ```
 
-## Phone number
+***
+
+### 2. Phone Number
+
+Starts a phone call automatically.  
 
 ```
 tel:+12345678900
 ```
 
-## SMS message
+***
+
+### 3. SMS Message
+
+Sends a pre-filled text message.  
 
 ```
 SMSTO:+12345678900:This is a sample text message
-SMSTO::This is a sample text message // phone number can be added after scanning
 ```
 
-## WIFI connection
+> You can leave out the number—`SMSTO::This is a sample text message`—to let the user choose the recipient after scanning.
+
+***
+
+### 4. Wi-Fi Connection
+
+Let users connect to Wi-Fi instantly without typing credentials.  
 
 ```
 WIFI:S:<SSID>;T:<WEP|WPA|blank>;P:<PASSWORD>;H:<true|false|blank>;
 ```
 
-| Parameter | Optional? | Example          | Description                                                             |
-| --------- | --------- | ---------------- | ----------------------------------------------------------------------- |
-| T         | Optional  | WPA              | Authentication type; can be WEP or WPA, or leave empty for no password. |
-| S         | Required  | MyNetworkName    | Network SSID. Required.                                                 |
-| P         | Optional  | ThisIsMyPassword | Password, ignored if T is left blank.                                   |
-| H         | Optional  | true             | True if the network SSID is hidden.                                     |
+| Parameter | Optional? | Example          | Description                               |
+| :-------- | :-------- | :--------------- | :---------------------------------------- |
+| S         | Required  | MyNetworkName    | Network SSID.                             |
+| T         | Optional  | WPA              | Authentication type (WEP, WPA, or blank). |
+| P         | Optional  | ThisIsMyPassword | Password (ignored if T is blank).         |
+| H         | Optional  | true             | True if the network SSID is hidden.       |
 
-## Email
+***
+
+### 5. Email
+
+Generates a pre-written message in the user’s default email client.
 
 ```
-mailto: info@example.com
-?subject=Issue%20with%20your%20product
-&body=Body%20goes%20here
+mailto:info@example.com?subject=Issue%20with%20your%20product&body=Body%20goes%20here
 ```
 
-## Contact
+***
+
+### 6. vCard (Contact Details)
+
+Encodes professional contact information, which can be saved directly to a phone.
 
 ```
 BEGIN:VCARD
 N:Smith;John;
 TEL;TYPE=work,VOICE:(111) 555-1212
-TEL;TYPE=home,VOICE:(404) 386-1017
-TEL;TYPE=fax:(866) 408-1212
 EMAIL:smith.j@smithdesigns.com
 ORG:Smith Designs LLC
 TITLE:Lead Designer
-ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America
 URL:https://www.smithdesigns.com
 VERSION:3.0
 END:VCARD
 ```
 
-| Parameter | Optional? | Description                                                              | Format                                                                                            |
-| --------- | --------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
-| BEGIN     | Required  | All vCards must start with this parameter                                | BEGIN:VCARD                                                                                       |
-| N         | Optional  | Full name                                                                | N:Smith;John;                                                                                     |
-| TEL;TYPE  | Optional  | Telephone number and type (work, home, fax)                              | TEL;TYPE=work,VOICE:(111) 555-1212 TEL;TYPE=home,VOICE:(404) 386-1017 TEL;TYPE=fax:(866) 408-1212 |
-| EMAIL     | Optional  | Email address                                                            | EMAIL:smith.j@smithdesigns.com                                                                    |
-| ORG       | Optional  | Company name                                                             | ORG:Smith Designs LLC                                                                             |
-| TITLE     | Optional  | Job title                                                                | TITLE:Lead Designer                                                                               |
-| ADR; TYPE | Optional  | Home or work address in order: Street; City; State; Postal Code; Country | ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America              |
-| URL       | Optional  | Link to a website                                                        | URL:https://www.smithdesigns.com                                                                  |
-| VERSION   | Required  | The version of the vCard specification.                                  | VERSION:3.0                                                                                       |
-| END       | Required  | All vCards must end with this parameter                                  | END:VCARD                                                                                         |
+| Field       | Required? | Description                                 |
+| :---------- | :-------- | :------------------------------------------ |
+| BEGIN / END | Required  | Start and end tags for the vCard block.     |
+| N           | Optional  | Full name.                                  |
+| TEL;TYPE    | Optional  | Phone numbers and types (work, home, fax).  |
+| EMAIL       | Optional  | Email address.                              |
+| ORG         | Optional  | Company name.                               |
+| TITLE       | Optional  | Professional title.                         |
+| ADR         | Optional  | Address in structured format.               |
+| URL         | Optional  | Website link.                               |
+| VERSION     | Required  | Version of the vCard spec (commonly `3.0`). |
 
-## Calendar
+***
 
-[docs](https://en.wikipedia.org/wiki/ICalendar)
+### 7. Calendar Event
+
+Allows users to add events directly to their calendars.
 
 ```
 BEGIN:VCALENDAR
@@ -92,11 +120,47 @@ END:VEVENT
 END:VCALENDAR
 ```
 
-## Crypto
+[See the iCalendar specification →](https://en.wikipedia.org/wiki/ICalendar)
+
+***
+
+### 8. Cryptocurrency
+
+Used for Bitcoin, Ethereum, and other digital wallets to request payments or display addresses.
 
 ```
-bitcoin:1GdK9UzpHBzqzX2A9JFP3Di4weBwqgmoQA?
-amount=0.015&
-label=Bob%27s%20Cafe&
-message=Purchase%20at%20Bob%27s%20Cafe
+bitcoin:1GdK9UzpHBzqzX2A9JFP3Di4weBwqgmoQA?amount=0.015&label=Bob%27s%20Cafe&message=Purchase%20at%20Bob%27s%20Cafe
 ```
+
+***
+
+### 9. App Store
+
+Links directly to specific mobile app store pages.
+
+```
+https://apps.apple.com/app/id000000000
+https://play.google.com/store/apps/details?id=com.example.app
+```
+
+***
+
+### 10. Geolocation
+
+Opens a user’s map app and displays a specific location.
+
+```
+geo:48.8588443,2.2943506?q=Eiffel%20Tower
+```
+
+***
+
+### 11. Plain Text 
+
+Displays custom text, notes, or a verification code when scanned.
+
+```
+Hello World!
+```
+
+***

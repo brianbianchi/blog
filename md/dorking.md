@@ -1,92 +1,66 @@
-# Google dorking
+# Google Dorking
 
-> A technique of querying a search engine for information hidden on public websites and vulnerabilities exposed by public servers.
+Google dorking involves using special operators and filters in search queries to uncover information that isn’t immediately visible through standard searches. It’s an intelligence-gathering technique that helps cybersecurity researchers, digital investigators, and power users discover hidden files, configurations, and data accidentally exposed to the internet.
 
-[read more...](https://ahrefs.com/blog/google-advanced-search-operators/)
+## Useful Tools
 
-## Tools
+If you want to automate or scale your exploration, check out:
 
-- [pagodo (passive google dorking)](https://github.com/opsdisk/pagodo)
+- [**pagodo (Passive Google Dorking)**](https://github.com/opsdisk/pagodo): Automates Google dork queries.
+- [**Google Hacking Database (GHDB)**](https://www.exploit-db.com/google-hacking-database): A public collection of Google dorks.
 
-## Search filters
+## Essential Search Filters
 
-| Filter                                  | Description                                                                                       | Example                                               |
-| :-------------------------------------- | :------------------------------------------------------------------------------------------------ | :---------------------------------------------------- |
-| allintext                               | Searches for occurrences of all the keywords given.                                               | `allintext:"keyword"`                                 |
-| intext                                  | Searches for the occurrences of keywords all at once or one at a time.                            | `intext:"keyword"`                                    |
-| inurl                                   | Searches for a URL matching one of the keywords.                                                  | `inurl:"keyword"`                                     |
-| allinurl                                | Searches for a URL matching all the keywords in the query.                                        | `allinurl:"keyword"`                                  |
-| intitle                                 | Searches for occurrences of keywords in title all or one.                                         | `intitle:"keyword"`                                   |
-| allintitle                              | Searches for occurrences of keywords all at a time.                                               | `allintitle:"keyword"`                                |
-| site                                    | Specifically searches that particular site and lists all the results for that site.               | `site:"www.google.com"`                               |
-| filetype                                | Searches for a particular filetype mentioned in the query.                                        | `filetype:"pdf"`                                      |
-| link                                    | Searches for external links to pages.                                                             | `link:"keyword"`                                      |
-| numrange                                | Used to locate specific numbers in your searches.                                                 | `numrange:321-325`                                    |
-| before/after                            | Used to search within a particular date range.                                                    | `filetype:pdf & (before:2000-01-01 after:2001-01-01)` |
-| allinanchor (and also inanchor)         | This shows sites which have the keyterms in links pointing to them, in order of the most links.   | `inanchor:rat`                                        |
-| allinpostauthor (and also inpostauthor) | Exclusive to blog search, this one picks out blog posts that are written by specific individuals. | `allinpostauthor:"keyword"`                           |
-| related                                 | List web pages that are “similar” to a specified web page.                                        | `related:www.google.com`                              |
-| cache                                   | Shows the version of the web page that Google has in its cache.                                   | `cache:www.google.com`                                |
-| map                                     | Shows the Google maps query.                                                                      | `map:croatia`                                         |
-| define                                  | Shows the dictionary definition of a word.                                                        | `define:entrepreneur`                                 |
+| Filter               | Description                                                         | Example                              |
+| :------------------- | :------------------------------------------------------------------ | :----------------------------------- |
+| `allintext:`         | Finds all keywords appearing in page text.                          | `allintext:"login admin"`            |
+| `intext:`            | Finds any of the terms appearing in page text.                      | `intext:"password"`                  |
+| `inurl:`             | Searches for keywords in URLs.                                      | `inurl:"admin"`                      |
+| `allinurl:`          | Finds pages containing multiple keywords in the URL.                | `allinurl:"php?id="`                 |
+| `intitle:`           | Finds pages with certain words in the title.                        | `intitle:"index of"`                 |
+| `allintitle:`        | Requires multiple keywords in the title.                            | `allintitle:"dashboard login"`       |
+| `site:`              | Limits results to a specific domain or site.                        | `site:example.com`                   |
+| `filetype:`          | Searches for specific file formats (pdf, docx, xls, etc.).          | `filetype:pdf`                       |
+| `link:`              | Lists pages that link to a specific page.                           | `link:example.com`                   |
+| `numrange:`          | Finds results containing numbers within a range.                    | `camera $300..$600`                  |
+| `before:` / `after:` | Filters results published before or after specific dates.           | `before:2021-01-01 after:2020-01-01` |
+| `related:`           | Finds sites similar to the one specified.                           | `related:bbc.com`                    |
+| `cache:`             | Displays Google’s cached version of a page.                         | `cache:example.com`                  |
+| `map:`               | Runs a query through Google Maps.                                   | `map:coffee shops Charleston`        |
+| `define:`            | Returns dictionary definitions.                                     | `define:entropy`                     |
+| `source:`            | Restricts results to a specific news source (works in Google News). | `source:reuters "market update"`     |
+| `location:`          | Filter news results by region                                       | `location:US`                        |
 
-## Operators
 
-#### Search Term
+*(Try combining filters for powerful precision — see examples below.)*
 
-This operator searches for the exact phrase within speech marks only. This is ideal when the phrase you are using to search is ambiguous and could be easily confused with something else, or when you’re not quite getting relevant enough results back. For example:
+***
 
-```
-"Tinned Sandwiches"
-```
+## Operators and Combinations
 
-#### OR
+| Operator    | Description                                | Example                                             |
+| :---------- | :----------------------------------------- | :-------------------------------------------------- |
+| `" "`       | Exact phrase search                        | `"project report"`                                  |
+| `OR`        | Returns results with either keyword        | `site:facebook.com OR site:twitter.com`             |
+| `AND`       | Returns results with both terms            | `filetype:pdf AND cybersecurity`                    |
+| `( )`       | Groups multiple conditions                 | `(inurl:login OR inurl:portal) AND intitle:"admin"` |
+| `+` / `-`   | Include or exclude results                 | `+cybersecurity -reddit`                            |
+| `~`         | Searches for synonyms                      | `~backup`                                           |
+| `*`         | Wildcard placeholder for any word          | `"best * tools for OSINT"`                          |
+| `AROUND(n)` | Finds keywords within `n` words each other | `"password" AROUND(5) "login"`                      |
 
-This self explanatory operator searches for a given search term OR an equivalent term.
+***
 
-```
-site:facebook.com | site:twitter.com
-```
+## Example Combinations
 
-#### AND
-
-```
-site:facebook.com & site:twitter.com
-```
-
-#### Operators combinaison
-
-```
-(site:facebook.com | site:twitter.com) & intext:"login"
-(site:facebook.com | site:twitter.com) (intext:"login")
-```
-
-#### Include results
-
-This will order results by the number of occurrence of the keyword.
+Here are a few practical examples of dorks:
 
 ```
--site:facebook.com +site:facebook.*
+site:gov filetype:xls "password"
+intitle:"index of" "admin"
+(site:facebook.com OR site:twitter.com) intext:"login"
 ```
 
-#### Exclude results
+These examples illustrate how combining operators can surface data that would otherwise be buried deep in the web.
 
-```
-site:facebook.* -site:facebook.com
-```
-
-#### Synonyms
-
-Adding a tilde to a search word tells Google that you want it to bring back synonyms for the term as well. For example, entering “~set” will bring back results that include words like “configure”, “collection” and “change” which are all synonyms of “set”. Fun fact: “set” has the most definitions of any word in the dictionary.
-
-```
-~set
-```
-
-#### Glob pattern (\*)
-
-Putting an asterisk in a search tells Google ‘I don’t know what goes here’. Basically, it’s really good for finding half remembered song lyrics or names of things.
-
-```
-site:*.com
-```
+***

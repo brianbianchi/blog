@@ -121,3 +121,5 @@ Understanding the Linux directory tree helps you navigate like a power user. Onc
 - Check system logs under `/var/log/`  
 - Find programs in `/usr/bin`  
 - Mount external drives in `/mnt` or `/media`  
+
+***
