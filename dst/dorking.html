@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>brian</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Google dorking</h1>
+<blockquote>
+<p>A technique of querying a search engine for information hidden on public websites and vulnerabilities exposed by public servers.</p>
+</blockquote>
+<p><a href="https://ahrefs.com/blog/google-advanced-search-operators/">read more...</a></p>
+<h2>Tools</h2>
+<ul>
+<li><a href="https://github.com/opsdisk/pagodo">pagodo (passive google dorking)</a></li>
+</ul>
+<h2>Search filters</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Filter</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">allintext</td>
+<td style="text-align: left;">Searches for occurrences of all the keywords given.</td>
+<td style="text-align: left;"><code>allintext:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">intext</td>
+<td style="text-align: left;">Searches for the occurrences of keywords all at once or one at a time.</td>
+<td style="text-align: left;"><code>intext:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">inurl</td>
+<td style="text-align: left;">Searches for a URL matching one of the keywords.</td>
+<td style="text-align: left;"><code>inurl:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">allinurl</td>
+<td style="text-align: left;">Searches for a URL matching all the keywords in the query.</td>
+<td style="text-align: left;"><code>allinurl:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">intitle</td>
+<td style="text-align: left;">Searches for occurrences of keywords in title all or one.</td>
+<td style="text-align: left;"><code>intitle:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">allintitle</td>
+<td style="text-align: left;">Searches for occurrences of keywords all at a time.</td>
+<td style="text-align: left;"><code>allintitle:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">site</td>
+<td style="text-align: left;">Specifically searches that particular site and lists all the results for that site.</td>
+<td style="text-align: left;"><code>site:"www.google.com"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">filetype</td>
+<td style="text-align: left;">Searches for a particular filetype mentioned in the query.</td>
+<td style="text-align: left;"><code>filetype:"pdf"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">link</td>
+<td style="text-align: left;">Searches for external links to pages.</td>
+<td style="text-align: left;"><code>link:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">numrange</td>
+<td style="text-align: left;">Used to locate specific numbers in your searches.</td>
+<td style="text-align: left;"><code>numrange:321-325</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">before/after</td>
+<td style="text-align: left;">Used to search within a particular date range.</td>
+<td style="text-align: left;"><code>filetype:pdf &amp; (before:2000-01-01 after:2001-01-01)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">allinanchor (and also inanchor)</td>
+<td style="text-align: left;">This shows sites which have the keyterms in links pointing to them, in order of the most links.</td>
+<td style="text-align: left;"><code>inanchor:rat</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">allinpostauthor (and also inpostauthor)</td>
+<td style="text-align: left;">Exclusive to blog search, this one picks out blog posts that are written by specific individuals.</td>
+<td style="text-align: left;"><code>allinpostauthor:"keyword"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">related</td>
+<td style="text-align: left;">List web pages that are “similar” to a specified web page.</td>
+<td style="text-align: left;"><code>related:www.google.com</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">cache</td>
+<td style="text-align: left;">Shows the version of the web page that Google has in its cache.</td>
+<td style="text-align: left;"><code>cache:www.google.com</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">map</td>
+<td style="text-align: left;">Shows the Google maps query.</td>
+<td style="text-align: left;"><code>map:croatia</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">define</td>
+<td style="text-align: left;">Shows the dictionary definition of a word.</td>
+<td style="text-align: left;"><code>define:entrepreneur</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Operators</h2>
+<h4>Search Term</h4>
+<p>This operator searches for the exact phrase within speech marks only. This is ideal when the phrase you are using to search is ambiguous and could be easily confused with something else, or when you’re not quite getting relevant enough results back. For example:</p>
+<pre><code>&quot;Tinned Sandwiches&quot;
+</code></pre>
+<h4>OR</h4>
+<p>This self explanatory operator searches for a given search term OR an equivalent term.</p>
+<pre><code>site:facebook.com | site:twitter.com
+</code></pre>
+<h4>AND</h4>
+<pre><code>site:facebook.com &amp; site:twitter.com
+</code></pre>
+<h4>Operators combinaison</h4>
+<pre><code>(site:facebook.com | site:twitter.com) &amp; intext:&quot;login&quot;
+(site:facebook.com | site:twitter.com) (intext:&quot;login&quot;)
+</code></pre>
+<h4>Include results</h4>
+<p>This will order results by the number of occurrence of the keyword.</p>
+<pre><code>-site:facebook.com +site:facebook.*
+</code></pre>
+<h4>Exclude results</h4>
+<pre><code>site:facebook.* -site:facebook.com
+</code></pre>
+<h4>Synonyms</h4>
+<p>Adding a tilde to a search word tells Google that you want it to bring back synonyms for the term as well. For example, entering “~set” will bring back results that include words like “configure”, “collection” and “change” which are all synonyms of “set”. Fun fact: “set” has the most definitions of any word in the dictionary.</p>
+<pre><code>~set
+</code></pre>
+<h4>Glob pattern (*)</h4>
+<p>Putting an asterisk in a search tells Google ‘I don’t know what goes here’. Basically, it’s really good for finding half remembered song lyrics or names of things.</p>
+<pre><code>site:*.com
+</code></pre>
+</body>
+
+</html>

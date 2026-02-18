@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>brian</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>QR codes</h1>
+<p>Quick response, or QR, is a type of barcode that can store a multitude of information. <a href="https://www.qr-code-generator.com/solutions/">docs</a></p>
+<h2>URL</h2>
+<pre><code>https://www.google.com/
+</code></pre>
+<h2>Phone number</h2>
+<pre><code>tel:+12345678900
+</code></pre>
+<h2>SMS message</h2>
+<pre><code>SMSTO:+12345678900:This is a sample text message
+SMSTO::This is a sample text message // phone number can be added after scanning
+</code></pre>
+<h2>WIFI connection</h2>
+<pre><code>WIFI:S:&lt;SSID&gt;;T:&lt;WEP|WPA|blank&gt;;P:&lt;PASSWORD&gt;;H:&lt;true|false|blank&gt;;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional?</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T</td>
+<td>Optional</td>
+<td>WPA</td>
+<td>Authentication type; can be WEP or WPA, or leave empty for no password.</td>
+</tr>
+<tr>
+<td>S</td>
+<td>Required</td>
+<td>MyNetworkName</td>
+<td>Network SSID. Required.</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Optional</td>
+<td>ThisIsMyPassword</td>
+<td>Password, ignored if T is left blank.</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Optional</td>
+<td>true</td>
+<td>True if the network SSID is hidden.</td>
+</tr>
+</tbody>
+</table>
+<h2>Email</h2>
+<pre><code>mailto: info@example.com
+?subject=Issue%20with%20your%20product
+&amp;body=Body%20goes%20here
+</code></pre>
+<h2>Contact</h2>
+<pre><code>BEGIN:VCARD
+N:Smith;John;
+TEL;TYPE=work,VOICE:(111) 555-1212
+TEL;TYPE=home,VOICE:(404) 386-1017
+TEL;TYPE=fax:(866) 408-1212
+EMAIL:smith.j@smithdesigns.com
+ORG:Smith Designs LLC
+TITLE:Lead Designer
+ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America
+URL:https://www.smithdesigns.com
+VERSION:3.0
+END:VCARD
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Optional?</th>
+<th>Description</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BEGIN</td>
+<td>Required</td>
+<td>All vCards must start with this parameter</td>
+<td>BEGIN:VCARD</td>
+</tr>
+<tr>
+<td>N</td>
+<td>Optional</td>
+<td>Full name</td>
+<td>N:Smith;John;</td>
+</tr>
+<tr>
+<td>TEL;TYPE</td>
+<td>Optional</td>
+<td>Telephone number and type (work, home, fax)</td>
+<td>TEL;TYPE=work,VOICE:(111) 555-1212 TEL;TYPE=home,VOICE:(404) 386-1017 TEL;TYPE=fax:(866) 408-1212</td>
+</tr>
+<tr>
+<td>EMAIL</td>
+<td>Optional</td>
+<td>Email address</td>
+<td>EMAIL:smith.j@smithdesigns.com</td>
+</tr>
+<tr>
+<td>ORG</td>
+<td>Optional</td>
+<td>Company name</td>
+<td>ORG:Smith Designs LLC</td>
+</tr>
+<tr>
+<td>TITLE</td>
+<td>Optional</td>
+<td>Job title</td>
+<td>TITLE:Lead Designer</td>
+</tr>
+<tr>
+<td>ADR; TYPE</td>
+<td>Optional</td>
+<td>Home or work address in order: Street; City; State; Postal Code; Country</td>
+<td>ADR;TYPE=WORK,PREF:;;151 Moore Avenue;Grand Rapids;MI;49503;United States of America</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>Optional</td>
+<td>Link to a website</td>
+<td>URL:https://www.smithdesigns.com</td>
+</tr>
+<tr>
+<td>VERSION</td>
+<td>Required</td>
+<td>The version of the vCard specification.</td>
+<td>VERSION:3.0</td>
+</tr>
+<tr>
+<td>END</td>
+<td>Required</td>
+<td>All vCards must end with this parameter</td>
+<td>END:VCARD</td>
+</tr>
+</tbody>
+</table>
+<h2>Calendar</h2>
+<p><a href="https://en.wikipedia.org/wiki/ICalendar">docs</a></p>
+<pre><code>BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+BEGIN:VEVENT
+UID:uid1@example.com
+DTSTAMP:19970714T170000Z
+ORGANIZER;CN=John Doe:MAILTO:john.doe@example.com
+DTSTART:19970714T170000Z
+DTEND:19970715T035959Z
+SUMMARY:Bastille Day Party
+GEO:48.85299;2.36885
+END:VEVENT
+END:VCALENDAR
+</code></pre>
+<h2>Crypto</h2>
+<pre><code>bitcoin:1GdK9UzpHBzqzX2A9JFP3Di4weBwqgmoQA?
+amount=0.015&amp;
+label=Bob%27s%20Cafe&amp;
+message=Purchase%20at%20Bob%27s%20Cafe
+</code></pre>
+</body>
+
+</html>
