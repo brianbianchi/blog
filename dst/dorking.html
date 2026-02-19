@@ -4,21 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>brian</title>
+    <title>Brian</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Google dorking</h1>
-<blockquote>
-<p>A technique of querying a search engine for information hidden on public websites and vulnerabilities exposed by public servers.</p>
-</blockquote>
-<p><a href="https://ahrefs.com/blog/google-advanced-search-operators/">read more...</a></p>
-<h2>Tools</h2>
+    <h1>Google Dorking</h1>
+<p>Google dorking involves using special operators and filters in search queries to uncover information that isn’t immediately visible through standard searches. It’s an intelligence-gathering technique that helps cybersecurity researchers, digital investigators, and power users discover hidden files, configurations, and data accidentally exposed to the internet.</p>
+<h2>Useful Tools</h2>
+<p>If you want to automate or scale your exploration, check out:</p>
 <ul>
-<li><a href="https://github.com/opsdisk/pagodo">pagodo (passive google dorking)</a></li>
+<li><a href="https://github.com/opsdisk/pagodo"><strong>pagodo (Passive Google Dorking)</strong></a>: Automates Google dork queries.</li>
+<li><a href="https://www.exploit-db.com/google-hacking-database"><strong>Google Hacking Database (GHDB)</strong></a>: A public collection of Google dorks.</li>
 </ul>
-<h2>Search filters</h2>
+<h2>Essential Search Filters</h2>
 <table>
 <thead>
 <tr>
@@ -29,123 +28,155 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">allintext</td>
-<td style="text-align: left;">Searches for occurrences of all the keywords given.</td>
-<td style="text-align: left;"><code>allintext:"keyword"</code></td>
+<td style="text-align: left;"><code>allintext:</code></td>
+<td style="text-align: left;">Finds all keywords appearing in page text.</td>
+<td style="text-align: left;"><code>allintext:"login admin"</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">intext</td>
-<td style="text-align: left;">Searches for the occurrences of keywords all at once or one at a time.</td>
-<td style="text-align: left;"><code>intext:"keyword"</code></td>
+<td style="text-align: left;"><code>intext:</code></td>
+<td style="text-align: left;">Finds any of the terms appearing in page text.</td>
+<td style="text-align: left;"><code>intext:"password"</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">inurl</td>
-<td style="text-align: left;">Searches for a URL matching one of the keywords.</td>
-<td style="text-align: left;"><code>inurl:"keyword"</code></td>
+<td style="text-align: left;"><code>inurl:</code></td>
+<td style="text-align: left;">Searches for keywords in URLs.</td>
+<td style="text-align: left;"><code>inurl:"admin"</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">allinurl</td>
-<td style="text-align: left;">Searches for a URL matching all the keywords in the query.</td>
-<td style="text-align: left;"><code>allinurl:"keyword"</code></td>
+<td style="text-align: left;"><code>allinurl:</code></td>
+<td style="text-align: left;">Finds pages containing multiple keywords in the URL.</td>
+<td style="text-align: left;"><code>allinurl:"php?id="</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">intitle</td>
-<td style="text-align: left;">Searches for occurrences of keywords in title all or one.</td>
-<td style="text-align: left;"><code>intitle:"keyword"</code></td>
+<td style="text-align: left;"><code>intitle:</code></td>
+<td style="text-align: left;">Finds pages with certain words in the title.</td>
+<td style="text-align: left;"><code>intitle:"index of"</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">allintitle</td>
-<td style="text-align: left;">Searches for occurrences of keywords all at a time.</td>
-<td style="text-align: left;"><code>allintitle:"keyword"</code></td>
+<td style="text-align: left;"><code>allintitle:</code></td>
+<td style="text-align: left;">Requires multiple keywords in the title.</td>
+<td style="text-align: left;"><code>allintitle:"dashboard login"</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">site</td>
-<td style="text-align: left;">Specifically searches that particular site and lists all the results for that site.</td>
-<td style="text-align: left;"><code>site:"www.google.com"</code></td>
+<td style="text-align: left;"><code>site:</code></td>
+<td style="text-align: left;">Limits results to a specific domain or site.</td>
+<td style="text-align: left;"><code>site:example.com</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">filetype</td>
-<td style="text-align: left;">Searches for a particular filetype mentioned in the query.</td>
-<td style="text-align: left;"><code>filetype:"pdf"</code></td>
+<td style="text-align: left;"><code>filetype:</code></td>
+<td style="text-align: left;">Searches for specific file formats (pdf, docx, xls, etc.).</td>
+<td style="text-align: left;"><code>filetype:pdf</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">link</td>
-<td style="text-align: left;">Searches for external links to pages.</td>
-<td style="text-align: left;"><code>link:"keyword"</code></td>
+<td style="text-align: left;"><code>link:</code></td>
+<td style="text-align: left;">Lists pages that link to a specific page.</td>
+<td style="text-align: left;"><code>link:example.com</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">numrange</td>
-<td style="text-align: left;">Used to locate specific numbers in your searches.</td>
-<td style="text-align: left;"><code>numrange:321-325</code></td>
+<td style="text-align: left;"><code>numrange:</code></td>
+<td style="text-align: left;">Finds results containing numbers within a range.</td>
+<td style="text-align: left;"><code>camera $300..$600</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">before/after</td>
-<td style="text-align: left;">Used to search within a particular date range.</td>
-<td style="text-align: left;"><code>filetype:pdf &amp; (before:2000-01-01 after:2001-01-01)</code></td>
+<td style="text-align: left;"><code>before:</code> / <code>after:</code></td>
+<td style="text-align: left;">Filters results published before or after specific dates.</td>
+<td style="text-align: left;"><code>before:2021-01-01 after:2020-01-01</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">allinanchor (and also inanchor)</td>
-<td style="text-align: left;">This shows sites which have the keyterms in links pointing to them, in order of the most links.</td>
-<td style="text-align: left;"><code>inanchor:rat</code></td>
+<td style="text-align: left;"><code>related:</code></td>
+<td style="text-align: left;">Finds sites similar to the one specified.</td>
+<td style="text-align: left;"><code>related:bbc.com</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">allinpostauthor (and also inpostauthor)</td>
-<td style="text-align: left;">Exclusive to blog search, this one picks out blog posts that are written by specific individuals.</td>
-<td style="text-align: left;"><code>allinpostauthor:"keyword"</code></td>
+<td style="text-align: left;"><code>cache:</code></td>
+<td style="text-align: left;">Displays Google’s cached version of a page.</td>
+<td style="text-align: left;"><code>cache:example.com</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">related</td>
-<td style="text-align: left;">List web pages that are “similar” to a specified web page.</td>
-<td style="text-align: left;"><code>related:www.google.com</code></td>
+<td style="text-align: left;"><code>map:</code></td>
+<td style="text-align: left;">Runs a query through Google Maps.</td>
+<td style="text-align: left;"><code>map:coffee shops Charleston</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">cache</td>
-<td style="text-align: left;">Shows the version of the web page that Google has in its cache.</td>
-<td style="text-align: left;"><code>cache:www.google.com</code></td>
+<td style="text-align: left;"><code>define:</code></td>
+<td style="text-align: left;">Returns dictionary definitions.</td>
+<td style="text-align: left;"><code>define:entropy</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">map</td>
-<td style="text-align: left;">Shows the Google maps query.</td>
-<td style="text-align: left;"><code>map:croatia</code></td>
+<td style="text-align: left;"><code>source:</code></td>
+<td style="text-align: left;">Restricts results to a specific news source (works in Google News).</td>
+<td style="text-align: left;"><code>source:reuters "market update"</code></td>
 </tr>
 <tr>
-<td style="text-align: left;">define</td>
-<td style="text-align: left;">Shows the dictionary definition of a word.</td>
-<td style="text-align: left;"><code>define:entrepreneur</code></td>
+<td style="text-align: left;"><code>location:</code></td>
+<td style="text-align: left;">Filter news results by region</td>
+<td style="text-align: left;"><code>location:US</code></td>
 </tr>
 </tbody>
 </table>
-<h2>Operators</h2>
-<h4>Search Term</h4>
-<p>This operator searches for the exact phrase within speech marks only. This is ideal when the phrase you are using to search is ambiguous and could be easily confused with something else, or when you’re not quite getting relevant enough results back. For example:</p>
-<pre><code>&quot;Tinned Sandwiches&quot;
+<p><em>(Try combining filters for powerful precision — see examples below.)</em></p>
+<hr />
+<h2>Operators and Combinations</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operator</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>" "</code></td>
+<td style="text-align: left;">Exact phrase search</td>
+<td style="text-align: left;"><code>"project report"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>OR</code></td>
+<td style="text-align: left;">Returns results with either keyword</td>
+<td style="text-align: left;"><code>site:facebook.com OR site:twitter.com</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>AND</code></td>
+<td style="text-align: left;">Returns results with both terms</td>
+<td style="text-align: left;"><code>filetype:pdf AND cybersecurity</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>( )</code></td>
+<td style="text-align: left;">Groups multiple conditions</td>
+<td style="text-align: left;"><code>(inurl:login OR inurl:portal) AND intitle:"admin"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>+</code> / <code>-</code></td>
+<td style="text-align: left;">Include or exclude results</td>
+<td style="text-align: left;"><code>+cybersecurity -reddit</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>~</code></td>
+<td style="text-align: left;">Searches for synonyms</td>
+<td style="text-align: left;"><code>~backup</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>*</code></td>
+<td style="text-align: left;">Wildcard placeholder for any word</td>
+<td style="text-align: left;"><code>"best * tools for OSINT"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>AROUND(n)</code></td>
+<td style="text-align: left;">Finds keywords within <code>n</code> words each other</td>
+<td style="text-align: left;"><code>"password" AROUND(5) "login"</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Example Combinations</h2>
+<p>Here are a few practical examples of dorks:</p>
+<pre><code>site:gov filetype:xls &quot;password&quot;
+intitle:&quot;index of&quot; &quot;admin&quot;
+(site:facebook.com OR site:twitter.com) intext:&quot;login&quot;
 </code></pre>
-<h4>OR</h4>
-<p>This self explanatory operator searches for a given search term OR an equivalent term.</p>
-<pre><code>site:facebook.com | site:twitter.com
-</code></pre>
-<h4>AND</h4>
-<pre><code>site:facebook.com &amp; site:twitter.com
-</code></pre>
-<h4>Operators combinaison</h4>
-<pre><code>(site:facebook.com | site:twitter.com) &amp; intext:&quot;login&quot;
-(site:facebook.com | site:twitter.com) (intext:&quot;login&quot;)
-</code></pre>
-<h4>Include results</h4>
-<p>This will order results by the number of occurrence of the keyword.</p>
-<pre><code>-site:facebook.com +site:facebook.*
-</code></pre>
-<h4>Exclude results</h4>
-<pre><code>site:facebook.* -site:facebook.com
-</code></pre>
-<h4>Synonyms</h4>
-<p>Adding a tilde to a search word tells Google that you want it to bring back synonyms for the term as well. For example, entering “~set” will bring back results that include words like “configure”, “collection” and “change” which are all synonyms of “set”. Fun fact: “set” has the most definitions of any word in the dictionary.</p>
-<pre><code>~set
-</code></pre>
-<h4>Glob pattern (*)</h4>
-<p>Putting an asterisk in a search tells Google ‘I don’t know what goes here’. Basically, it’s really good for finding half remembered song lyrics or names of things.</p>
-<pre><code>site:*.com
-</code></pre>
+<p>These examples illustrate how combining operators can surface data that would otherwise be buried deep in the web.</p>
+<hr />
 </body>
 
 </html>
