@@ -14,7 +14,6 @@
 - *The Diary of a Young Girl* - Anne Frank  
 - *The Rational Optimist* - Matt Ridley  
 - *The Storyteller* - Dave Grohl  
-- *Tomorrow, and Tomorrow, and Tomorrow* - Gabrielle Zevin  
 - *Tuesdays with Morrie* - Mitch Albom  
 
 ## Fiction
@@ -26,6 +25,7 @@
 - *The Hitchhiker's Guide to the Galaxy* - Douglas Adams  
 - *The Midnight Library* - Matt Haig  
 - *The Secret History* - Donna Tartt  
+- *Tomorrow, and Tomorrow, and Tomorrow* - Gabrielle Zevin  
 - *The Veldt* - Ray Bradbury  
 - *Yellowface* - R. F. Kuang  
 
@@ -71,6 +71,7 @@
 - *CODA*  
 - *Game of Thrones*  
 - *Good Will Hunting*  
+- *The Goonies*
 - *La La Land*  
 - *Parasite*  
 - *The Departed*  

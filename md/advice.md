@@ -283,4 +283,6 @@ On his 70th birthday, he offered advice he wished he had known.
 1. Aim to die broke. Give to your beneficiaries before you die; it’s more fun and useful. Spend it all. Your last check should go to the funeral home and it should bounce.
 1. The chief prevention against getting old is to remain astonished.
 
+***
+
 If you enjoyed these and want more of his advise, read his [book](https://a.co/d/07sEnfQo).

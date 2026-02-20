@@ -15,4 +15,6 @@ If you are curious, this is what you'll find on my [bookshelf](bookshelf.html).
 - [Understanding the Linux File System](file_system.html)
 - [Common Web Vulnerabilities](owasp.html)
 - [Kevin Kelly's Unsolicited Advice](advice.html)
+- [Life’s Paradoxes](paradoxes.html)
 - [How to Win Friends and Influence People by Dale Carnegie](influence.html)
+- [Technology and the Future](future.html)
