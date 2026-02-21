@@ -1,12 +1,12 @@
 # QR Codes
 
-Quick Response (QR) codes are a type of two-dimensional barcode that can store URLs, text, contact information, Wi-Fi credentials, and more. They bridge the physical and digital worlds by letting your phone instantly open a URL, send an SMS, or connect to a network just by scanning with your native camera app.
+Quick Response (QR) codes are a type of two-dimensional barcode that can store URLs, text, contact information, Wi-Fi credentials, and more. They bridge the physical and digital worlds by letting your phone instantly open a URL, send an SMS, or connect to a network by scanning  with your native camera app.
 
 ***
 
 ## Common QR Code Types
 
-Below are the most useful QR code formats you can generate and use today. You can test them easily with a free QR code generator or command-line tools.
+Below are the useful formats you can use to generate a QR code.
 
 ***
 

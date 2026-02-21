@@ -1,15 +1,13 @@
 # Google Dorking
 
-Google dorking involves using special operators and filters in search queries to uncover information that isn’t immediately visible through standard searches. It’s an intelligence-gathering technique that helps cybersecurity researchers, digital investigators, and power users discover hidden files, configurations, and data accidentally exposed to the internet.
+Google dorking involves using operators and filters to make more precise search queries. This may help to uncover information that isn’t immediately visible through standard searches, like hidden files, configurations, and data accidentally exposed to the internet.
 
 ## Useful Tools
-
-If you want to automate or scale your exploration, check out:
 
 - [**pagodo (Passive Google Dorking)**](https://github.com/opsdisk/pagodo): Automates Google dork queries.
 - [**Google Hacking Database (GHDB)**](https://www.exploit-db.com/google-hacking-database): A public collection of Google dorks.
 
-## Essential Search Filters
+## Filters
 
 | Filter               | Description                                                         | Example                              |
 | :------------------- | :------------------------------------------------------------------ | :----------------------------------- |
@@ -30,9 +28,6 @@ If you want to automate or scale your exploration, check out:
 | `define:`            | Returns dictionary definitions.                                     | `define:entropy`                     |
 | `source:`            | Restricts results to a specific news source (works in Google News). | `source:reuters "market update"`     |
 | `location:`          | Filter news results by region                                       | `location:US`                        |
-
-
-*(Try combining filters for powerful precision — see examples below.)*
 
 ***
 
@@ -61,6 +56,6 @@ intitle:"index of" "admin"
 (site:facebook.com OR site:twitter.com) intext:"login"
 ```
 
-These examples illustrate how combining operators can surface data that would otherwise be buried deep in the web.
+These examples illustrate how combining operators can surface data that would otherwise be buried deep under page 2+.
 
 ***
