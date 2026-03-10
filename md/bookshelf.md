@@ -50,6 +50,7 @@
 - *Eric Raymond* - [catb.org](http://www.catb.org/~esr/)
 - *George Hotz* - [geohot.github.io/blog](https://geohot.github.io/blog/)
 - *Gergely Orosz* - [blog.pragmaticengineer.com](https://blog.pragmaticengineer.com/)
+- *Guy Torbet* - [torbet.co](https://torbet.co/)
 - *Hacker News* - [news.ycombinator.com](https://news.ycombinator.com/)
 - *Irrational Exuberance* - [lethain.com](https://lethain.com/)
 - *Lex Fridman* - [lexfridman.com](https://lexfridman.com/reading-list/)
@@ -64,6 +65,7 @@
 - *Susan Rigetti* - [susanrigetti.com](https://www.susanrigetti.com/)
 - *Taimur Abdaal* - [taimur.me](https://taimur.me/)
 - *The Pudding* - [pudding.cool](https://pudding.cool/)
+- *Tiny Projects* - [tinyprojects.dev](https://tinyprojects.dev/)
 - *Vivek Aithal* - [vivekaithal.co](https://vivekaithal.co/)
 - *Wait But Why* - [waitbutwhy.com](https://waitbutwhy.com/)
 

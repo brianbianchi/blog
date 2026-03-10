@@ -181,9 +181,9 @@ On his 70th birthday, he offered advice he wished he had known.
 
 1. About 99% of the time, the right time is right now.
 1. No one is as impressed with your possessions as you are.
-1. Dont ever work for someone you dont want to become.
+1. Don't ever work for someone you don't want to become.
 1. Cultivate 12 people who love you, because they are worth more than 12 million people who like you.
-1. Dont keep making the same mistakes; try to make new mistakes.
+1. Don't keep making the same mistakes; try to make new mistakes.
 1. If you stop to listen to a musician or street performer for more than a minute, you owe them a dollar.
 1. Anything you say before the word “but” does not count.
 1. When you forgive others, they may not notice, but you will heal. Forgiveness is not something we do for others; it is a gift to ourselves.
@@ -198,7 +198,7 @@ On his 70th birthday, he offered advice he wished he had known.
 1. Ask funders for money, and they’ll give you advice; but ask for advice and they’ll give you money.
 1. Productivity is often a distraction. Don’t aim for better ways to get through your tasks as quickly as possible, rather aim for better tasks that you never want to stop doing.
 1. Immediately pay what you owe to vendors, workers, contractors. They will go out of their way to work with you first next time.
-1. The biggest lie we tell ourselves is “I dont need to write this down because I will remember it.”
+1. The biggest lie we tell ourselves is “I don't need to write this down because I will remember it.”
 1. Your growth as a conscious being is measured by the number of uncomfortable conversations you are willing to have.
 1. Speak confidently as if you are right, but listen carefully as if you are wrong.
 1. Handy measure: the distance between your fingertips of your outstretched arms at shoulder level is your height.
@@ -232,7 +232,7 @@ On his 70th birthday, he offered advice he wished he had known.
 1. You will be judged on how well you treat those who can do nothing for you.
 1. We tend to overestimate what we can do in a day, and underestimate what we can achieve in a decade. Miraculous things can be accomplished if you give it ten years. A long game will compound small gains to overcome even big mistakes.
 1. Thank a teacher who changed your life.
-1. You cant reason someone out of a notion that they didn’t reason themselves into.
+1. You can’t reason someone out of a notion that they didn’t reason themselves into.
 1. Your best job will be one that you were unqualified for because it stretches you. In fact only apply to jobs you are unqualified for.
 1. Buy used books. They have the same words as the new ones. Also libraries.
 1. You can be whatever you want, so be the person who ends meetings early.
@@ -248,11 +248,11 @@ On his 70th birthday, he offered advice he wished he had known.
 1. Art is whatever you can get away with.
 1. For the best results with your children, spend only half the money you think you should, but double the time with them.
 1. Purchase the most recent tourist guidebook to your home town or region. You’ll learn a lot by playing the tourist once a year.
-1. Dont wait in line to eat something famous. It is rarely worth the wait.
+1. Don't wait in line to eat something famous. It is rarely worth the wait.
 1. To rapidly reveal the true character of a person you just met, move them onto an abysmally slow internet connection. Observe.
 1. Prescription for popular success: do something strange. Make a habit of your weird.
 1. Be a pro. Back up your back up. Have at least one physical backup and one backup in the cloud. Have more than one of each. How much would you pay to retrieve all your data, photos, notes, if you lost them? Backups are cheap compared to regrets.
-1. Dont believe everything you think you believe.
+1. Don't believe everything you think you believe.
 1. To signal an emergency, use the rule of three; 3 shouts, 3 horn blasts, or 3 whistles.
 1. At a restaurant do you order what you know is great, or do you try something new? Do you make what you know will sell or try something new? Do you keep dating new folks or try to commit to someone you already met? The optimal balance for exploring new things vs exploiting them once found is: 1/3. Spend 1/3 of your time on exploring and 2/3 time on deepening. It is harder to devote time to exploring as you age because it seems unproductive, but aim for 1/3.
 1. Actual great opportunities do not have “Great Opportunities” in the subject line.
@@ -260,16 +260,16 @@ On his 70th birthday, he offered advice he wished he had known.
 1. Take note if you find yourself wondering “Where is my good knife? Or, where is my good pen?” That means you have bad ones. Get rid of those.
 1. When you are stuck, explain your problem to others. Often simply laying out a problem will present a solution. Make “explaining the problem” part of your troubleshooting process.
 1. When buying a garden hose, an extension cord, or a ladder, get one substantially longer than you think you need. It’ll be the right size.
-1. Dont bother fighting the old; just build the new.
+1. Don't bother fighting the old; just build the new.
 1. Your group can achieve great things way beyond your means simply by showing people that they are appreciated.
 1. When someone tells you about the peak year of human history, the period of time when things were good before things went downhill, it will always be the years of when they were 10 years old — which is the peak of any human’s existence.
 1. You are as big as the things that make you angry.
 1. When speaking to an audience it’s better to fix your gaze on a few people than to “spray” your gaze across the room. Your eyes telegraph to others whether you really believe what you are saying.
-1. Habit is far more dependable than inspiration. Make progress by making habits. Dont focus on getting into shape. Focus on becoming the kind of person who never misses a workout.
-1. When negotiating, dont aim for a bigger piece of the pie; aim to create a bigger pie.
+1. Habit is far more dependable than inspiration. Make progress by making habits. Don't focus on getting into shape. Focus on becoming the kind of person who never misses a workout.
+1. When negotiating, don't aim for a bigger piece of the pie; aim to create a bigger pie.
 1. If you repeated what you did today 365 more times will you be where you want to be next year?
 1. You see only 2% of another person, and they see only 2% of you. Attune yourselves to the hidden 98%.
-1. Your time and space are limited. Remove, give away, throw out things in your life that dont spark joy any longer in order to make room for those that do.
+1. Your time and space are limited. Remove, give away, throw out things in your life that don't spark joy any longer in order to make room for those that do.
 1. Our descendants will achieve things that will amaze us, yet a portion of what they will create could have been made with today’s materials and tools if we had had the imagination. Think bigger.
 1. For a great payoff be especially curious about the things you are not interested in.
 1. Focus on directions rather than destinations. Who knows their destiny? But maintain the right direction and you’ll arrive at where you want to go.
@@ -278,11 +278,11 @@ On his 70th birthday, he offered advice he wished he had known.
 1. Copying others is a good way to start. Copying yourself is a disappointing way to end.
 1. The best time to negotiate your salary for a new job is the moment AFTER they say they want you, and not before. Then it becomes a game of chicken for each side to name an amount first, but it is to your advantage to get them to give a number before you do.
 1. Rather than steering your life to avoid surprises, aim directly for them.
-1. Dont purchase extra insurance if you are renting a car with a credit card.
+1. Don't purchase extra insurance if you are renting a car with a credit card.
 1. If your opinions on one subject can be predicted from your opinions on another, you may be in the grip of an ideology. When you truly think for yourself your conclusions will not be predictable.
 1. Aim to die broke. Give to your beneficiaries before you die; it’s more fun and useful. Spend it all. Your last check should go to the funeral home and it should bounce.
 1. The chief prevention against getting old is to remain astonished.
 
 ***
 
-If you enjoyed these and want more of his advise, read his [book](https://a.co/d/07sEnfQo).
+If you enjoyed these and want more of his advice, read his [book](https://a.co/d/07sEnfQo).
