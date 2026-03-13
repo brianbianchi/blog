@@ -17,8 +17,9 @@ for md_path in Path("md").glob("*.md"):
 
     html_body = markdown.markdown(md_text, extensions=["extra"])
     title = md_path.stem.replace("-", " ").title()
+    nav = "" if md_path.stem == "index" else '<nav><a href="index.html">home</a></nav>'
 
-    full_html = template.format(title=title, body=html_body)
+    full_html = template.format(title=title, body=html_body, nav=nav)
 
     html_path = Path("dist") / (md_path.stem + ".html")
     with open(html_path, "w", encoding="utf-8") as f:
