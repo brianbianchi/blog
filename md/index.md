@@ -1,8 +1,6 @@
 # Brian
 
-I started this blog because reading about a topic and being able to explain it are two different skills. If I can write about something clearly, I actually understand it.
-
-Most of what you'll find here are notes from things I've been studying, concepts I've worked through, and techniques I've had to look up more than once.
+Writing is thinking. These are my notes made public.
 
 You can follow my work on [Github](https://github.com/brianbianchi) and find what I've been reading on my [bookshelf](bookshelf.html).
 
