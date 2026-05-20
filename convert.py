@@ -7,6 +7,7 @@ if Path("dist").exists():
 Path("dist").mkdir(parents=True, exist_ok=True)
 
 shutil.copy("styles.css", "dist/styles.css")
+shutil.copy("icon.png", "dist/icon.png")
 
 with open("template.html", "r", encoding="utf-8") as f:
     template = f.read()

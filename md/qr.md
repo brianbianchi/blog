@@ -98,7 +98,3 @@ https://play.google.com/store/apps/details?id=com.example.app
 ```
 Hello World!
 ```
-
-## Security
-
-QR phishing ("quishing") — attackers swap legitimate QR codes for ones pointing to malicious URLs. Verify the destination URL before following a scanned link.

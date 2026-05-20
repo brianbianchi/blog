@@ -13,9 +13,23 @@ h3 {
     line-height: 1.2
 }
 
+pre {
+    overflow-x: auto;
+}
+
+code {
+    word-break: break-word;
+}
+
+pre code {
+    word-break: normal;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
+    display: block;
+    overflow-x: auto;
 }
 
 th,
