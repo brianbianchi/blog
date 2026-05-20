@@ -52,11 +52,13 @@
 - *Gergely Orosz* - [blog.pragmaticengineer.com](https://blog.pragmaticengineer.com/)
 - *Guy Torbet* - [torbet.co](https://torbet.co/)
 - *Hacker News* - [news.ycombinator.com](https://news.ycombinator.com/)
+- *HackerNoon* - [hackernoon.com](https://hackernoon.com/)
 - *Irrational Exuberance* - [lethain.com](https://lethain.com/)
 - *Lex Fridman* - [lexfridman.com](https://lexfridman.com/reading-list/)
 - *Melting Asphalt* - [meltingasphalt.com](https://meltingasphalt.com/)
 - *Michael DePlante / @izobashi* - [izobashi.info](https://izobashi.info/)
 - *Naval Ravikant* - [nav.al](https://nav.al/)
+- *Our World in Data* - [https://ourworldindata.org/](https://ourworldindata.org/)
 - *Paul Graham* - [paulgraham.com](http://www.paulgraham.com/)
 - *Read Something Great* - [readsomethinggreat.com](https://www.readsomethinggreat.com/)
 - *Scott Galloway* - [profgalloway.com](https://www.profgalloway.com/)
@@ -68,16 +70,4 @@
 - *Tiny Projects* - [tinyprojects.dev](https://tinyprojects.dev/)
 - *Vivek Aithal* - [vivekaithal.co](https://vivekaithal.co/)
 - *Wait But Why* - [waitbutwhy.com](https://waitbutwhy.com/)
-
-## Film
-- *CODA*  
-- *Game of Thrones*  
-- *Good Will Hunting*  
-- *The Goonies*
-- *La La Land*  
-- *Parasite*  
-- *The Departed*  
-- *The Martian*  
-- *The Revenant*  
-- *The Social Network*  
-- *The Three Body Problem*
+- *Yegor Bugayenko* - [yegor256.com](https://www.yegor256.com/)

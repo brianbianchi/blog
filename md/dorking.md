@@ -1,61 +1,54 @@
 # Google Dorking
 
-Google dorking involves using operators and filters to make more precise search queries. This may help to uncover information that isn’t immediately visible through standard searches, like hidden files, configurations, and data accidentally exposed to the internet.
+Search operators to surface information not visible through standard queries, such as exposed configs, hidden files, accidentally public data.
 
-## Useful Tools
+## Tools
 
-- [**pagodo (Passive Google Dorking)**](https://github.com/opsdisk/pagodo): Automates Google dork queries.
-- [**Google Hacking Database (GHDB)**](https://www.exploit-db.com/google-hacking-database): A public collection of Google dorks.
+- [pagodo](https://github.com/opsdisk/pagodo) — automates Google dork queries
+- [Google Hacking Database (GHDB)](https://www.exploit-db.com/google-hacking-database) — public dork collection
 
 ## Filters
 
-| Filter               | Description                                                         | Example                              |
-| :------------------- | :------------------------------------------------------------------ | :----------------------------------- |
-| `allintext:`         | Finds all keywords appearing in page text.                          | `allintext:"login admin"`            |
-| `intext:`            | Finds any of the terms appearing in page text.                      | `intext:"password"`                  |
-| `inurl:`             | Searches for keywords in URLs.                                      | `inurl:"admin"`                      |
-| `allinurl:`          | Finds pages containing multiple keywords in the URL.                | `allinurl:"php?id="`                 |
-| `intitle:`           | Finds pages with certain words in the title.                        | `intitle:"index of"`                 |
-| `allintitle:`        | Requires multiple keywords in the title.                            | `allintitle:"dashboard login"`       |
-| `site:`              | Limits results to a specific domain or site.                        | `site:example.com`                   |
-| `filetype:`          | Searches for specific file formats (pdf, docx, xls, etc.).          | `filetype:pdf`                       |
-| `link:`              | Lists pages that link to a specific page.                           | `link:example.com`                   |
-| `numrange:`          | Finds results containing numbers within a range.                    | `camera $300..$600`                  |
-| `before:` / `after:` | Filters results published before or after specific dates.           | `before:2021-01-01 after:2020-01-01` |
-| `related:`           | Finds sites similar to the one specified.                           | `related:bbc.com`                    |
-| `cache:`             | Displays Google’s cached version of a page.                         | `cache:example.com`                  |
-| `map:`               | Runs a query through Google Maps.                                   | `map:coffee shops Charleston`        |
-| `define:`            | Returns dictionary definitions.                                     | `define:entropy`                     |
-| `source:`            | Restricts results to a specific news source (works in Google News). | `source:reuters "market update"`     |
-| `location:`          | Filter news results by region                                       | `location:US`                        |
+| Filter               | Description                        | Example                          |
+| :------------------- | :--------------------------------- | :------------------------------- |
+| `allintext:`         | All keywords in page text          | `allintext:"login admin"`        |
+| `intext:`            | Any term in page text              | `intext:"password"`              |
+| `inurl:`             | Keywords in URL                    | `inurl:"admin"`                  |
+| `allinurl:`          | Multiple keywords in URL           | `allinurl:"php?id="`             |
+| `intitle:`           | Keywords in page title             | `intitle:"index of"`             |
+| `allintitle:`        | Multiple keywords in title         | `allintitle:"dashboard login"`   |
+| `site:`              | Limit to domain                    | `site:example.com`               |
+| `filetype:` / `ext:` | Specific file format               | `filetype:pdf`                   |
+| `link:`              | Pages linking to a URL             | `link:example.com`               |
+| `numrange:`          | Numbers within a range             | `camera $300..$600`              |
+| `before:` / `after:` | Filter by publish date             | `before:2021-01-01`              |
+| `related:`           | Similar sites                      | `related:bbc.com`                |
+| `cache:`             | Google's cached version            | `cache:example.com`              |
+| `define:`            | Dictionary definition              | `define:entropy`                 |
+| `source:`            | Specific news source (Google News) | `source:reuters "market update"` |
+| `location:`          | Filter news by region              | `location:US`                    |
 
-***
+## Operators
 
-## Operators and Combinations
+| Operator    | Description             | Example                                             |
+| :---------- | :---------------------- | :-------------------------------------------------- |
+| `" "`       | Exact phrase            | `"project report"`                                  |
+| `OR`        | Either keyword          | `site:facebook.com OR site:twitter.com`             |
+| `AND`       | Both terms              | `filetype:pdf AND cybersecurity`                    |
+| `( )`       | Group conditions        | `(inurl:login OR inurl:portal) AND intitle:"admin"` |
+| `-`         | Exclude results         | `cybersecurity -reddit`                             |
+| `*`         | Wildcard                | `"best * tools for OSINT"`                          |
+| `AROUND(n)` | Keywords within n words | `"password" AROUND(5) "login"`                      |
 
-| Operator    | Description                                | Example                                             |
-| :---------- | :----------------------------------------- | :-------------------------------------------------- |
-| `" "`       | Exact phrase search                        | `"project report"`                                  |
-| `OR`        | Returns results with either keyword        | `site:facebook.com OR site:twitter.com`             |
-| `AND`       | Returns results with both terms            | `filetype:pdf AND cybersecurity`                    |
-| `( )`       | Groups multiple conditions                 | `(inurl:login OR inurl:portal) AND intitle:"admin"` |
-| `+` / `-`   | Include or exclude results                 | `+cybersecurity -reddit`                            |
-| `~`         | Searches for synonyms                      | `~backup`                                           |
-| `*`         | Wildcard placeholder for any word          | `"best * tools for OSINT"`                          |
-| `AROUND(n)` | Finds keywords within `n` words each other | `"password" AROUND(5) "login"`                      |
-
-***
-
-## Example Combinations
-
-Here are a few practical examples of dorks:
+## Examples
 
 ```
 site:gov filetype:xls "password"
 intitle:"index of" "admin"
 (site:facebook.com OR site:twitter.com) intext:"login"
+inurl:".env" DB_PASSWORD
+filetype:log username password
+site:example.com ext:php inurl:?id=
+intitle:"index of" ".ssh"
+site:pastebin.com "api_key"
 ```
-
-These examples illustrate how combining operators can surface data that would otherwise be buried deep under page 2+.
-
-***

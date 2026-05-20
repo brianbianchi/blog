@@ -1,59 +1,54 @@
-# How Networks Work
+# Networks
 
-When data travels from your browser to a web server and back, it passes through a layered system of rules and protocols. Those layers, and the protocols running inside them, are the foundation for everything else in networking and security.
+## OSI Model
 
-## The OSI Model
-
-The OSI (Open Systems Interconnection) model breaks network communication into 7 layers. Each layer has a specific job and passes data to the layer above or below it.
+7 layers. Each passes data to the one above or below.
 
 | Layer | Name | What it does | Examples |
 |-------|------|-------------|---------|
-| 7 | Application | Interface for user-facing apps | HTTP, DNS, FTP, SMTP |
+| 7 | Application | User-facing app interface | HTTP, DNS, FTP, SMTP |
 | 6 | Presentation | Encoding, encryption, compression | TLS, JPEG, ASCII |
-| 5 | Session | Opens and manages sessions between hosts | NetBIOS, RPC |
+| 5 | Session | Opens/manages sessions between hosts | NetBIOS, RPC |
 | 4 | Transport | End-to-end delivery, ports, reliability | TCP, UDP |
 | 3 | Network | Logical addressing and routing | IP, ICMP, ARP |
-| 2 | Data Link | Physical addressing on the local network | Ethernet, MAC addresses |
+| 2 | Data Link | Physical addressing on local network | Ethernet, MAC addresses |
 | 1 | Physical | Raw bits over a medium | Cables, radio waves, fiber |
 
-Most of your time will be spent thinking about layers 3, 4, and 7. A firewall operating at layer 4 makes decisions based on TCP/UDP ports. A WAF operating at layer 7 is inspecting actual HTTP content.
+Layers 3, 4, and 7 matter most. Layer-4 firewalls filter on ports. Layer-7 WAFs inspect HTTP content.
 
-## The TCP/IP Model
+## TCP/IP Model
 
-The TCP/IP model is a simpler 4-layer version that reflects how the internet actually works:
-
-| TCP/IP Layer | Corresponds to OSI Layers |
-|-------------|--------------------------|
+| TCP/IP Layer | OSI Layers |
+|-------------|-----------|
 | Application | 5, 6, 7 |
 | Transport | 4 |
 | Internet | 3 |
 | Network Access | 1, 2 |
 
-As data travels down the stack it gets **encapsulated**, meaning each layer wraps it with its own header. On the receiving end, each layer strips its header off as data travels back up.
+Data going down the stack gets **encapsulated** — each layer wraps it with a header. Going back up, each layer strips its header off.
 
 ## TCP vs UDP
 
-At the transport layer, two protocols handle delivery of data.
+**TCP** — connection-oriented. Three-way handshake before data flows:
+1. **SYN** — client initiates
+2. **SYN-ACK** — server acknowledges
+3. **ACK** — client confirms, connection established
 
-**TCP (Transmission Control Protocol)** is connection-oriented. Before any data is sent, the two hosts complete a **three-way handshake**:
+Guarantees delivery, ordering, and error checking. Lost packets retransmit. Used by HTTP, SSH, FTP, SMTP.
 
-1. **SYN:** the client sends a synchronize packet to initiate a connection
-2. **SYN-ACK:** the server acknowledges and responds
-3. **ACK:** the client confirms and the connection is established
-
-TCP guarantees delivery, ordering, and error checking. Lost packets get retransmitted. This makes it reliable but adds overhead. HTTP, SSH, FTP, and SMTP all use TCP.
-
-**UDP (User Datagram Protocol)** is connectionless. Packets are sent with no handshake and no guarantee of delivery or order. That makes it fast but unreliable, which is fine for DNS, DHCP, video streaming, VoIP, and gaming, where speed matters more than perfection.
+**UDP** — connectionless. No handshake, no delivery guarantee, no ordering. Fast. Used by DNS, DHCP, streaming, VoIP, gaming.
 
 ## IP Addressing
 
-Every device on a network has an IP address. IPv4 addresses are 32 bits written in dotted decimal notation like `192.168.1.10`.
+IPv4: 32-bit addresses in dotted decimal (`192.168.1.10`). Two parts:
+- **Network portion** — which network
+- **Host portion** — which device on that network
 
-An IP address has two parts. The **network portion** identifies which network the device is on, and the **host portion** identifies the specific device within it. The **subnet mask** defines the boundary between the two.
+The **subnet mask** defines the boundary.
 
 ### Subnetting
 
-A subnet mask of `255.255.255.0` (written as `/24` in CIDR notation) means the first 24 bits belong to the network and the last 8 bits are available for hosts.
+`/24` (255.255.255.0) = 24 bits for network, 8 bits for hosts.
 
 | CIDR | Subnet Mask | Usable Hosts |
 |------|-------------|-------------|
@@ -62,71 +57,87 @@ A subnet mask of `255.255.255.0` (written as `/24` in CIDR notation) means the f
 | /26 | 255.255.255.192 | 62 |
 | /30 | 255.255.255.252 | 2 |
 
-Two addresses in every subnet are reserved: the **network address** (all host bits set to 0) and the **broadcast address** (all host bits set to 1). Everything between them is usable.
+Each subnet reserves the network address (all host bits 0) and broadcast address (all host bits 1).
 
-The following ranges are private and not routable on the public internet:
+Private ranges (not routable on the public internet):
 
 | Range | CIDR |
 |-------|------|
-| 10.0.0.0 to 10.255.255.255 | 10.0.0.0/8 |
-| 172.16.0.0 to 172.31.255.255 | 172.16.0.0/12 |
-| 192.168.0.0 to 192.168.255.255 | 192.168.0.0/16 |
+| 10.0.0.0 – 10.255.255.255 | 10.0.0.0/8 |
+| 172.16.0.0 – 172.31.255.255 | 172.16.0.0/12 |
+| 192.168.0.0 – 192.168.255.255 | 192.168.0.0/16 |
 
-If you see one of these addresses, the device is sitting behind NAT.
+### NAT
+
+Network Address Translation lets multiple devices share one public IP. The router maintains a translation table mapping internal `ip:port` pairs to the external address. Outbound traffic gets the public IP; responses get translated back.
+
+## DHCP
+
+Automatically assigns IP addresses to devices. Uses UDP ports 67 (server) and 68 (client).
+
+DORA process:
+1. **Discover** — client broadcasts looking for a server
+2. **Offer** — server offers an IP lease
+3. **Request** — client requests the offered IP
+4. **Acknowledge** — server confirms the lease
 
 ## ARP
 
-ARP (Address Resolution Protocol) solves a specific problem: you know a device's IP address, but you need its MAC address to actually send it data on the local network.
+Resolves an IP address to a MAC address on the local network.
 
-IP addresses handle routing between networks. MAC addresses handle delivery within a network. When a device wants to reach `192.168.1.5`, it broadcasts a request to everyone on the local network asking who owns that IP. The device with that address responds with its MAC. That pairing gets cached in the ARP table.
-
-You can see your current ARP cache by running:
+Device wants to reach `192.168.1.5` → broadcasts asking who owns that IP → owner responds with its MAC → pairing gets cached in the ARP table.
 
 ```
 arp -a
 ```
 
-ARP has no authentication. Any device can send an unsolicited reply claiming to own any IP address. This is the basis of ARP spoofing, where an attacker poisons the ARP caches of nearby hosts to redirect traffic through their machine.
+No authentication — any device can claim any IP. This enables **ARP spoofing**, where an attacker poisons nearby ARP caches to intercept traffic.
+
+## ICMP
+
+Handles error reporting and diagnostics at the network layer. Not used for data transfer.
+
+- `ping` — ICMP Echo Requests, measures reachability and RTT
+- `traceroute` — increments TTL to map each hop to a destination
+
+Often rate-limited or blocked at firewalls.
 
 ## DNS
 
-DNS (Domain Name System) translates domain names like `example.com` into IP addresses. It works as a hierarchical, distributed database spread across many servers worldwide.
+Translates domain names to IP addresses. Hierarchical and distributed.
 
-When you type `example.com` into a browser:
+Resolution for `example.com`:
+1. Check local cache
+2. Query **recursive resolver** (ISP or public: `8.8.8.8`, `1.1.1.1`)
+3. Resolver asks a **root nameserver** where `.com` lives
+4. Root points to the **TLD nameserver** for `.com`
+5. TLD points to the **authoritative nameserver** for `example.com`
+6. Authoritative server returns the IP
 
-1. Your device checks its local DNS cache
-2. If nothing is cached, it asks your **recursive resolver** (typically from your ISP or a public option like `8.8.8.8`)
-3. The resolver asks a **root nameserver** where `.com` lives
-4. The root points to the **TLD nameserver** for `.com`
-5. The TLD nameserver points to the **authoritative nameserver** for `example.com`
-6. The authoritative server returns the IP address
-7. Your device connects to that IP
-
-### Common DNS Record Types
+### Record Types
 
 | Record | Purpose |
 |--------|---------|
-| A | Maps a domain to an IPv4 address |
-| AAAA | Maps a domain to an IPv6 address |
+| A | Domain → IPv4 address |
+| AAAA | Domain → IPv6 address |
 | CNAME | Alias from one domain to another |
 | MX | Mail server for the domain |
-| TXT | Arbitrary text, used for SPF, DKIM, and verification |
+| TXT | Arbitrary text — SPF, DKIM, verification |
 | NS | Authoritative nameservers for the domain |
-| PTR | Reverse lookup from IP to domain name |
+| PTR | Reverse lookup: IP → domain name |
+| SOA | Start of Authority — primary nameserver, zone serial, TTLs |
 
-Standard queries use UDP on port 53. Large responses and zone transfers use TCP on port 53.
+Standard queries: UDP port 53. Large responses and zone transfers: TCP port 53.
 
-DNS has no built-in authentication in its base form, which is what makes DNS spoofing and cache poisoning possible. DNSSEC adds cryptographic verification, but real-world adoption is still inconsistent.
+No built-in authentication → DNS spoofing and cache poisoning are possible. DNSSEC adds cryptographic verification but adoption is inconsistent.
 
-## How It All Fits Together
+## Request Flow
 
-When you visit `https://example.com`:
+Visiting `https://example.com`:
 
-1. **DNS** resolves `example.com` to an IP address
-2. **ARP** resolves the next-hop router's IP to a MAC address
-3. A **TCP SYN** packet goes to port 443 on that IP
-4. A **TLS handshake** happens at the presentation layer
-5. An **HTTP GET** request travels through the encrypted tunnel
-6. The server responds and the data works its way back up the stack to your browser
-
-Every one of those steps is a place where something can go wrong, or where an attacker can interfere. Knowing what normal looks like is what makes the abnormal recognizable.
+1. **DNS** resolves `example.com` to an IP
+2. **ARP** resolves the next-hop router's IP to a MAC
+3. **TCP SYN** to port 443
+4. **TLS handshake** at the presentation layer
+5. **HTTP GET** through the encrypted tunnel
+6. Response travels back up the stack to the browser
