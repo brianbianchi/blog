@@ -1,8 +1,8 @@
 # Brian
 
 Check out what I've been reading on my [bookshelf](bookshelf.html).
-
-Follow my work on [Github](https://github.com/brianbianchi). Connect with me on [LinkedIn](https://www.linkedin.com/in/bianchibrian/).
+Follow my work on [Github](https://github.com/brianbianchi).
+Connect with me on [LinkedIn](https://www.linkedin.com/in/bianchibrian/).
 
 ## Writings
 
