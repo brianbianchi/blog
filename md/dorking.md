@@ -1,6 +1,6 @@
 # Google Dorking
 
-Search operators to surface information not visible through standard queries, such as exposed configs, hidden files, accidentally public data.
+Google search operators let you be precise in filtering results. They allow you to find exactly the file type you need, limit results to one domain, or exclude noise that pollutes your query. They can also surface things that were never meant to be public, such as exposed `.env` files, open admin panels, and database dumps sitting on misconfigured servers. Understanding how dorking works makes you both a better researcher and more aware of what your own infrastructure might be leaking.
 
 ## Tools
 

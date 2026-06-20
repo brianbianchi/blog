@@ -1,6 +1,6 @@
 # QR Codes
 
-Two-dimensional barcodes that store URLs, text, contacts, Wi-Fi credentials, and more. Native camera apps scan them without a separate app.
+QR codes can do a lot more than link to a website. They can connect a phone to Wi-Fi, add a calendar event, or share a contact from your native camera app. Here are the formats for each use case.
 
 ## Formats
 

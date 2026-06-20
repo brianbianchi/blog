@@ -1,5 +1,7 @@
 # Bookshelf
 
+Books, essays, and blogs I've read and recommend.
+
 ## Non-fiction
 - *American Kingpin* - Nick Bilton  
 - *Code Name: Pale Horse* - Scott Payne  
@@ -50,10 +52,12 @@
 - *Eric Raymond* - [catb.org](http://www.catb.org/~esr/)
 - *George Hotz* - [geohot.github.io/blog](https://geohot.github.io/blog/)
 - *Gergely Orosz* - [blog.pragmaticengineer.com](https://blog.pragmaticengineer.com/)
+- *Grug Brained Developer* - [grugbrain.dev](https://grugbrain.dev/)
 - *Guy Torbet* - [torbet.co](https://torbet.co/)
 - *Hacker News* - [news.ycombinator.com](https://news.ycombinator.com/)
 - *HackerNoon* - [hackernoon.com](https://hackernoon.com/)
 - *Irrational Exuberance* - [lethain.com](https://lethain.com/)
+- *Jessica Livingston* - [foundersatwork.posthaven.com](https://foundersatwork.posthaven.com/)
 - *Lex Fridman* - [lexfridman.com](https://lexfridman.com/reading-list/)
 - *Melting Asphalt* - [meltingasphalt.com](https://meltingasphalt.com/)
 - *Michael DePlante / @izobashi* - [izobashi.info](https://izobashi.info/)
@@ -64,6 +68,7 @@
 - *Scott Galloway* - [profgalloway.com](https://www.profgalloway.com/)
 - *Seth Godin* - [seths.blog](https://seths.blog/)
 - *Staff Engineer* - [staffeng.com](https://staffeng.com/)
+- *Sriram Krishnan* - [sriramk.com/memos.html](https://sriramk.com/memos.html)
 - *Susan Rigetti* - [susanrigetti.com](https://www.susanrigetti.com/)
 - *Taimur Abdaal* - [taimur.me](https://taimur.me/)
 - *The Pudding* - [pudding.cool](https://pudding.cool/)
