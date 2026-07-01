@@ -1,7 +1,6 @@
 # QR Codes
 
-QR codes can do a lot more than link to a website. They can connect a phone to Wi-Fi, add a calendar event, or share a contact from your native camera app. Here are the formats for each use case.
-
+QR codes can do a lot more than link to a website. They can connect a phone to Wi-Fi, add a calendar event, or share a contact from your native camera app.
 ## Formats
 
 ### URL

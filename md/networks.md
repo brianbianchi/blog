@@ -278,4 +278,3 @@ Visiting `https://example.com`:
 | ~70ms   | First byte received (TTFB)                              |
 | ~100ms+ | Page renders                                            |
 
-Actual times vary by location, network, and server load.
