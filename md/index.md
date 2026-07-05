@@ -6,9 +6,10 @@ Check out what I've been reading on my [bookshelf](bookshelf.html). Follow my wo
 
 ## Writings
 
-- [Genetic Algorithms](https://github.com/brianbianchi/research/blob/master/biology/genetics_algorithms.ipynb)
-- [Lane Detection Using a Series of Image Transformations](https://github.com/brianbianchi/research/blob/master/vision/lane_prediction.ipynb)
-- [Basic MNIST Neural Network](https://github.com/brianbianchi/research/blob/master/machine_learning/mnist.ipynb)
+- [Genetic Algorithms](https://github.com/brianbianchi/research/blob/master/genetics_algorithms.ipynb)
+- [Lane Prediction](https://github.com/brianbianchi/research/blob/master/lane_prediction.ipynb)
+- [Convolutional Neural Networks](https://github.com/brianbianchi/research/blob/master/cnn.ipynb)
+- [Basic MNIST Neural Network](https://github.com/brianbianchi/research/blob/master/mnist.ipynb)
 - [How Networks Work](networks.html)
 - [Google Dorking](dorking.html)
 - [QR Codes](qr.html)
