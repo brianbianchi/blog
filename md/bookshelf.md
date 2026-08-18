@@ -63,6 +63,7 @@ Books, essays, and blogs I've read and recommend.
 - *Michael DePlante / @izobashi* - [izobashi.info](https://izobashi.info/)
 - *Naval Ravikant* - [nav.al](https://nav.al/)
 - *Our World in Data* - [ourworldindata.org](https://ourworldindata.org/)
+- *Pat Walls* - [patwalls.com](https://patwalls.com/)
 - *Paul Graham* - [paulgraham.com](http://www.paulgraham.com/)
 - *Read Something Great* - [readsomethinggreat.com](https://www.readsomethinggreat.com/)
 - *Scott Galloway* - [profgalloway.com](https://www.profgalloway.com/)
