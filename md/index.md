@@ -7,7 +7,7 @@ Check out what I've been reading on my [bookshelf](bookshelf.html). Follow my wo
 ## Writings
 
 - [What I've Learned About Claude Code](claude-code.html)
-- [How Machines Learn](github.com/brianbianchi/notebooks/blob/master/learners.ipynb)
+- [How Machines Learn](https://github.com/brianbianchi/notebooks/blob/master/learners.ipynb)
 - [Creating Genetic Algorithms](https://github.com/brianbianchi/notebooks/blob/master/genetics_algorithms.ipynb)
 - [Creating a MNIST Neural Network](https://github.com/brianbianchi/notebooks/blob/master/mnist.ipynb)
 - [Predicting Car Lanes](https://github.com/brianbianchi/notebooks/blob/master/lane_prediction.ipynb)
