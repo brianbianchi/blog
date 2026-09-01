@@ -23,12 +23,10 @@ Books, essays, and blogs I've read and recommend.
 - *Don Quixote* - Miguel de Cervantes  
 - *Fahrenheit 451* - Ray Bradbury  
 - *Harry Potter (series)* - J.K. Rowling  
+- *Snow Crash* - Neal Stephenson
 - *The Alchemist* - Paulo Coelho  
 - *The Hitchhiker's Guide to the Galaxy* - Douglas Adams  
-- *The Midnight Library* - Matt Haig  
-- *The Secret History* - Donna Tartt  
-- *Tomorrow, and Tomorrow, and Tomorrow* - Gabrielle Zevin  
-- *The Veldt* - Ray Bradbury  
+- *The Midnight Library* - Matt Haig
 - *Yellowface* - R. F. Kuang  
 
 ## Essays
@@ -39,12 +37,11 @@ Books, essays, and blogs I've read and recommend.
 - *How to Ask Useful Questions* - [Josh Kaufman](https://joshkaufman.net/how-to-ask-useful-questions/)
 - *How to ask questions the right way* - [Eric Steven Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
 - *Politics is a mind killer* - [Eliezer Yudkowsky](https://www.lesswrong.com/posts/9weLK2AJ9JEt2Tt8f/politics-is-the-mind-killer)
-- *The algebra of wealth* - [Scott Galloway](https://www.profgalloway.com/the-algebra-of-wealth/)
+- *The Algebra of Wealth* - [Scott Galloway](https://www.profgalloway.com/the-algebra-of-wealth/)
 - *The spoon theory* - [Christine Miserandino](https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/)
 - *What Silicon Valley "Gets" about Software Engineers that Traditional Companies Do Not* - [Gergely Orosz](https://blog.pragmaticengineer.com/what-silicon-valley-gets-right-on-software-engineers/)
 
 ## Blogs
-- *Alex Turek* - [alexturek.com](https://alexturek.com/)
 - *Barking Up The Wrong Tree* - [bakadesuyo.com](https://www.bakadesuyo.com/)
 - *Courtland Allen* - [courtlandallen.com](https://www.courtlandallen.com/)
 - *Derek Sivers* - [sive.rs/blog](https://sive.rs/blog)
@@ -53,27 +50,24 @@ Books, essays, and blogs I've read and recommend.
 - *George Hotz* - [geohot.github.io/blog](https://geohot.github.io/blog/)
 - *Gergely Orosz* - [blog.pragmaticengineer.com](https://blog.pragmaticengineer.com/)
 - *Grug Brained Developer* - [grugbrain.dev](https://grugbrain.dev/)
-- *Guy Torbet* - [torbet.co](https://torbet.co/)
 - *Hacker News* - [news.ycombinator.com](https://news.ycombinator.com/)
 - *HackerNoon* - [hackernoon.com](https://hackernoon.com/)
 - *Irrational Exuberance* - [lethain.com](https://lethain.com/)
 - *Jessica Livingston* - [foundersatwork.posthaven.com](https://foundersatwork.posthaven.com/)
+- *JSTOR Daily* - [daily.jstor.org](https://daily.jstor.org/)
 - *Lex Fridman* - [lexfridman.com](https://lexfridman.com/reading-list/)
 - *Melting Asphalt* - [meltingasphalt.com](https://meltingasphalt.com/)
-- *Michael DePlante / @izobashi* - [izobashi.info](https://izobashi.info/)
 - *Naval Ravikant* - [nav.al](https://nav.al/)
 - *Our World in Data* - [ourworldindata.org](https://ourworldindata.org/)
 - *Pat Walls* - [patwalls.com](https://patwalls.com/)
+- *Patrick Collison* - [patrickcollison.com](https://patrickcollison.com/about)
 - *Paul Graham* - [paulgraham.com](http://www.paulgraham.com/)
 - *Read Something Great* - [readsomethinggreat.com](https://www.readsomethinggreat.com/)
-- *Scott Galloway* - [profgalloway.com](https://www.profgalloway.com/)
-- *Seth Godin* - [seths.blog](https://seths.blog/)
 - *Staff Engineer* - [staffeng.com](https://staffeng.com/)
-- *Sriram Krishnan* - [sriramk.com/memos.html](https://sriramk.com/memos.html)
+- *Sriram Krishnan* - [sriramk.com](https://sriramk.com/memos.html)
 - *Susan Rigetti* - [susanrigetti.com](https://www.susanrigetti.com/)
 - *Taimur Abdaal* - [taimur.me](https://taimur.me/)
 - *The Pudding* - [pudding.cool](https://pudding.cool/)
 - *Tiny Projects* - [tinyprojects.dev](https://tinyprojects.dev/)
-- *Vivek Aithal* - [vivekaithal.co](https://vivekaithal.co/)
 - *Wait But Why* - [waitbutwhy.com](https://waitbutwhy.com/)
 - *Yegor Bugayenko* - [yegor256.com](https://www.yegor256.com/)
