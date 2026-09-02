@@ -39,7 +39,7 @@ Books, essays, and blogs I've read and recommend.
 - *100 Rules — Personal Philosophy* - [Dru Riley](https://druriley.com/100-2/)
 - *Better Motherfucking Website* - [bettermotherfuckingwebsite.com](http://bettermotherfuckingwebsite.com/)
 - *How to Ask Useful Questions* - [Josh Kaufman](https://joshkaufman.net/how-to-ask-useful-questions/)
-- *How To Ask Questions The Smart Way   * - [Eric Steven Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
+- *How To Ask Questions The Smart Way* - [Eric Steven Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
 - *Politics is the Mind-Killer* - [Eliezer Yudkowsky](https://www.lesswrong.com/posts/9weLK2AJ9JEt2Tt8f/politics-is-the-mind-killer)
 - *The Algebra of Wealth* - [Scott Galloway](https://www.profgalloway.com/the-algebra-of-wealth/)
 - *The Spoon Theory* - [Christine Miserandino](https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/)
