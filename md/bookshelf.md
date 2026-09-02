@@ -4,11 +4,13 @@ Books, essays, and blogs I've read and recommend.
 
 ## Non-fiction
 - *American Kingpin* - Nick Bilton  
+- *Black Edge* - Sheelah Kolhatkar
 - *Code Name: Pale Horse* - Scott Payne  
 - *Educated* - Tara Westover  
 - *Enlightenment Now* - Steven Pinker  
 - *Escape into Meaning* - Evan Puschak  
 - *On Writing Well* - William Zinsser  
+- *Outliers* - Malcolm Gladwell
 - *Sapiens* - Yuval Noah Harari  
 - *The Anxious Generation* - Jonathan Haidt  
 - *The Anthropocene Reviewed* - John Green  
@@ -20,6 +22,7 @@ Books, essays, and blogs I've read and recommend.
 
 ## Fiction
 - *11/22/63* - Stephen King  
+- *And Then There Were None* - Agatha Christie
 - *Don Quixote* - Miguel de Cervantes  
 - *Fahrenheit 451* - Ray Bradbury  
 - *Harry Potter (series)* - J.K. Rowling  
@@ -27,6 +30,7 @@ Books, essays, and blogs I've read and recommend.
 - *The Alchemist* - Paulo Coelho  
 - *The Hitchhiker's Guide to the Galaxy* - Douglas Adams  
 - *The Midnight Library* - Matt Haig
+- *The Three-Body Problem (series)* - Liu Cixin
 - *Yellowface* - R. F. Kuang  
 
 ## Essays
@@ -35,10 +39,10 @@ Books, essays, and blogs I've read and recommend.
 - *100 Rules — Personal Philosophy* - [Dru Riley](https://druriley.com/100-2/)
 - *Better Motherfucking Website* - [bettermotherfuckingwebsite.com](http://bettermotherfuckingwebsite.com/)
 - *How to Ask Useful Questions* - [Josh Kaufman](https://joshkaufman.net/how-to-ask-useful-questions/)
-- *How to ask questions the right way* - [Eric Steven Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
-- *Politics is a mind killer* - [Eliezer Yudkowsky](https://www.lesswrong.com/posts/9weLK2AJ9JEt2Tt8f/politics-is-the-mind-killer)
+- *How To Ask Questions The Smart Way   * - [Eric Steven Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
+- *Politics is the Mind-Killer* - [Eliezer Yudkowsky](https://www.lesswrong.com/posts/9weLK2AJ9JEt2Tt8f/politics-is-the-mind-killer)
 - *The Algebra of Wealth* - [Scott Galloway](https://www.profgalloway.com/the-algebra-of-wealth/)
-- *The spoon theory* - [Christine Miserandino](https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/)
+- *The Spoon Theory* - [Christine Miserandino](https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/)
 - *What Silicon Valley "Gets" about Software Engineers that Traditional Companies Do Not* - [Gergely Orosz](https://blog.pragmaticengineer.com/what-silicon-valley-gets-right-on-software-engineers/)
 
 ## Blogs
