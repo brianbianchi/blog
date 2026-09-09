@@ -12,8 +12,9 @@ Books, essays, and blogs I've read and recommend.
 - *On Writing Well* - William Zinsser  
 - *Outliers* - Malcolm Gladwell
 - *Sapiens* - Yuval Noah Harari  
-- *The Anxious Generation* - Jonathan Haidt  
 - *The Anthropocene Reviewed* - John Green  
+- *The Anxious Generation* - Jonathan Haidt  
+- *The Art Theif* - Michael Finkel
 - *The Coddling of the American Mind* - Jonathan Haidt  
 - *The Diary of a Young Girl* - Anne Frank  
 - *The Rational Optimist* - Matt Ridley  
@@ -26,6 +27,7 @@ Books, essays, and blogs I've read and recommend.
 - *Don Quixote* - Miguel de Cervantes  
 - *Fahrenheit 451* - Ray Bradbury  
 - *Harry Potter (series)* - J.K. Rowling  
+- *Jurassic Park* - Michael Crichton
 - *Snow Crash* - Neal Stephenson
 - *The Alchemist* - Paulo Coelho  
 - *The Hitchhiker's Guide to the Galaxy* - Douglas Adams  
