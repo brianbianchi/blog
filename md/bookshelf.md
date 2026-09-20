@@ -12,9 +12,11 @@ Books, essays, and blogs I've read and recommend.
 - *On Writing Well* - William Zinsser  
 - *Outliers* - Malcolm Gladwell
 - *Sapiens* - Yuval Noah Harari  
+- *Shoe Dog* - Phil Knight
 - *The Anthropocene Reviewed* - John Green  
 - *The Anxious Generation* - Jonathan Haidt  
-- *The Art Theif* - Michael Finkel
+- *The Art Thief* - Michael Finkel
+- *The Autobiography of Benjamin Franklin* - Benjamin Franklin
 - *The Coddling of the American Mind* - Jonathan Haidt  
 - *The Diary of a Young Girl* - Anne Frank  
 - *The Rational Optimist* - Matt Ridley  
@@ -36,15 +38,13 @@ Books, essays, and blogs I've read and recommend.
 - *Yellowface* - R. F. Kuang  
 
 ## Essays
-- *18 Little Stories That Will Have Massive Impact On Your Life* - [Ryan Holiday](https://ryanholiday.medium.com/18-little-stories-that-will-have-massive-impact-on-your-life-5c599daf03ee)
+- *18 Little Stories* - [Ryan Holiday](https://ryanholiday.net/18-stories/)
 - *40 One-Sentence Email Tips* - [Josh Spector](https://joshspector.com/one-sentence-email-tips/)
 - *100 Rules — Personal Philosophy* - [Dru Riley](https://druriley.com/100-2/)
 - *Better Motherfucking Website* - [bettermotherfuckingwebsite.com](http://bettermotherfuckingwebsite.com/)
 - *How to Ask Useful Questions* - [Josh Kaufman](https://joshkaufman.net/how-to-ask-useful-questions/)
-- *How To Ask Questions The Smart Way* - [Eric Steven Raymond](http://www.catb.org/~esr/faqs/smart-questions.html)
 - *Politics is the Mind-Killer* - [Eliezer Yudkowsky](https://www.lesswrong.com/posts/9weLK2AJ9JEt2Tt8f/politics-is-the-mind-killer)
 - *The Algebra of Wealth* - [Scott Galloway](https://www.profgalloway.com/the-algebra-of-wealth/)
-- *The Spoon Theory* - [Christine Miserandino](https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/)
 - *What Silicon Valley "Gets" about Software Engineers that Traditional Companies Do Not* - [Gergely Orosz](https://blog.pragmaticengineer.com/what-silicon-valley-gets-right-on-software-engineers/)
 
 ## Blogs
@@ -52,7 +52,7 @@ Books, essays, and blogs I've read and recommend.
 - *Courtland Allen* - [courtlandallen.com](https://www.courtlandallen.com/)
 - *Derek Sivers* - [sive.rs/blog](https://sive.rs/blog)
 - *Dru Riley* - [druriley.com](https://druriley.com/)
-- *Eric Raymond* - [catb.org](http://www.catb.org/~esr/)
+- *Eric Steven Raymond (ESR)* - [catb.org](http://www.catb.org/esr/)
 - *George Hotz* - [geohot.github.io/blog](https://geohot.github.io/blog/)
 - *Gergely Orosz* - [blog.pragmaticengineer.com](https://blog.pragmaticengineer.com/)
 - *Grug Brained Developer* - [grugbrain.dev](https://grugbrain.dev/)
@@ -69,6 +69,7 @@ Books, essays, and blogs I've read and recommend.
 - *Patrick Collison* - [patrickcollison.com](https://patrickcollison.com/about)
 - *Paul Graham* - [paulgraham.com](http://www.paulgraham.com/)
 - *Read Something Great* - [readsomethinggreat.com](https://www.readsomethinggreat.com/)
+- *Ryan Holiday* - [ryanholiday.net/blog](https://ryanholiday.net/blog/)
 - *Staff Engineer* - [staffeng.com](https://staffeng.com/)
 - *Sriram Krishnan* - [sriramk.com](https://sriramk.com/memos.html)
 - *Susan Rigetti* - [susanrigetti.com](https://www.susanrigetti.com/)
