@@ -4,36 +4,36 @@ Books, essays, and blogs I've read and recommend.
 
 ## Non-fiction
 - *American Kingpin* - Nick Bilton  
+- *The Anthropocene Reviewed* - John Green  
+- *The Anxious Generation* - Jonathan Haidt  
+- *The Art Thief* - Michael Finkel
+- *The Autobiography of Benjamin Franklin* - Benjamin Franklin
 - *Black Edge* - Sheelah Kolhatkar
+- *The Coddling of the American Mind* - Jonathan Haidt  
 - *Code Name: Pale Horse* - Scott Payne  
+- *The Diary of a Young Girl* - Anne Frank  
 - *Educated* - Tara Westover  
 - *Enlightenment Now* - Steven Pinker  
 - *Escape into Meaning* - Evan Puschak  
 - *On Writing Well* - William Zinsser  
 - *Outliers* - Malcolm Gladwell
+- *The Rational Optimist* - Matt Ridley  
 - *Sapiens* - Yuval Noah Harari  
 - *Shoe Dog* - Phil Knight
-- *The Anthropocene Reviewed* - John Green  
-- *The Anxious Generation* - Jonathan Haidt  
-- *The Art Thief* - Michael Finkel
-- *The Autobiography of Benjamin Franklin* - Benjamin Franklin
-- *The Coddling of the American Mind* - Jonathan Haidt  
-- *The Diary of a Young Girl* - Anne Frank  
-- *The Rational Optimist* - Matt Ridley  
 - *The Storyteller* - Dave Grohl  
 - *Tuesdays with Morrie* - Mitch Albom  
 
 ## Fiction
 - *11/22/63* - Stephen King  
+- *The Alchemist* - Paulo Coelho  
 - *And Then There Were None* - Agatha Christie
 - *Don Quixote* - Miguel de Cervantes  
 - *Fahrenheit 451* - Ray Bradbury  
 - *Harry Potter (series)* - J.K. Rowling  
-- *Jurassic Park* - Michael Crichton
-- *Snow Crash* - Neal Stephenson
-- *The Alchemist* - Paulo Coelho  
 - *The Hitchhiker's Guide to the Galaxy* - Douglas Adams  
+- *Jurassic Park* - Michael Crichton
 - *The Midnight Library* - Matt Haig
+- *Snow Crash* - Neal Stephenson
 - *The Three-Body Problem (series)* - Liu Cixin
 - *Yellowface* - R. F. Kuang  
 
@@ -41,10 +41,10 @@ Books, essays, and blogs I've read and recommend.
 - *18 Little Stories* - [Ryan Holiday](https://ryanholiday.net/18-stories/)
 - *40 One-Sentence Email Tips* - [Josh Spector](https://joshspector.com/one-sentence-email-tips/)
 - *100 Rules — Personal Philosophy* - [Dru Riley](https://druriley.com/100-2/)
+- *The Algebra of Wealth* - [Scott Galloway](https://www.profgalloway.com/the-algebra-of-wealth/)
 - *Better Motherfucking Website* - [bettermotherfuckingwebsite.com](http://bettermotherfuckingwebsite.com/)
 - *How to Ask Useful Questions* - [Josh Kaufman](https://joshkaufman.net/how-to-ask-useful-questions/)
 - *Politics is the Mind-Killer* - [Eliezer Yudkowsky](https://www.lesswrong.com/posts/9weLK2AJ9JEt2Tt8f/politics-is-the-mind-killer)
-- *The Algebra of Wealth* - [Scott Galloway](https://www.profgalloway.com/the-algebra-of-wealth/)
 - *What Silicon Valley "Gets" about Software Engineers that Traditional Companies Do Not* - [Gergely Orosz](https://blog.pragmaticengineer.com/what-silicon-valley-gets-right-on-software-engineers/)
 
 ## Blogs
@@ -68,13 +68,13 @@ Books, essays, and blogs I've read and recommend.
 - *Pat Walls* - [patwalls.com](https://patwalls.com/)
 - *Patrick Collison* - [patrickcollison.com](https://patrickcollison.com/about)
 - *Paul Graham* - [paulgraham.com](http://www.paulgraham.com/)
+- *The Pudding* - [pudding.cool](https://pudding.cool/)
 - *Read Something Great* - [readsomethinggreat.com](https://www.readsomethinggreat.com/)
 - *Ryan Holiday* - [ryanholiday.net/blog](https://ryanholiday.net/blog/)
 - *Staff Engineer* - [staffeng.com](https://staffeng.com/)
 - *Sriram Krishnan* - [sriramk.com](https://sriramk.com/memos.html)
 - *Susan Rigetti* - [susanrigetti.com](https://www.susanrigetti.com/)
 - *Taimur Abdaal* - [taimur.me](https://taimur.me/)
-- *The Pudding* - [pudding.cool](https://pudding.cool/)
 - *Tiny Projects* - [tinyprojects.dev](https://tinyprojects.dev/)
 - *Wait But Why* - [waitbutwhy.com](https://waitbutwhy.com/)
 - *Yegor Bugayenko* - [yegor256.com](https://www.yegor256.com/)
