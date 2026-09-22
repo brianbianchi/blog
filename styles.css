@@ -39,6 +39,6 @@ td {
     border-bottom: 1px solid #DDD;
 }
 
-tr:hover {
-    background-color: #D6EEEE;
+tbody tr:hover {
+    background-color: #EEE;
 }

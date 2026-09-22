@@ -1,10 +1,10 @@
-# Networks
+# Anatomy of a Web Request
 
-Every time you load a page, a request travels through a dozen layers of infrastructure — from your keyboard to a data center and back, in under 100ms. This is a bottom-up map of how it works, from raw bits on a wire all the way up through DNS, TLS, and HTTP.
+Loading a web page sends a request through many layers of infrastructure, from a client device to a data center and back, typically in under 100 milliseconds. This is a bottom-up map of how that works, starting from raw bits on a wire and moving up through DNS, TLS, and HTTP.
 
 ## OSI Model
 
-7 layers. Each passes data to the one above or below.
+The OSI model divides network communication into seven layers. Each layer passes data to the one above or below it.
 
 | Layer | Name         | What it does                            | Examples                   |
 | ----- | ------------ | --------------------------------------- | -------------------------- |
@@ -16,7 +16,7 @@ Every time you load a page, a request travels through a dozen layers of infrastr
 | 2     | Data Link    | Physical addressing on local network    | Ethernet, MAC addresses    |
 | 1     | Physical     | Raw bits over a medium                  | Cables, radio waves, fiber |
 
-Layers 3, 4, and 7 matter most. Layer-4 firewalls filter on ports. Layer-7 WAFs inspect HTTP content.
+Layers 3, 4, and 7 matter most in practice. Layer-4 firewalls filter on ports. Layer-7 WAFs inspect HTTP content.
 
 ## TCP/IP Model
 
@@ -27,40 +27,42 @@ Layers 3, 4, and 7 matter most. Layer-4 firewalls filter on ports. Layer-7 WAFs 
 | Internet       | 3          |
 | Network Access | 1, 2       |
 
-Data going down the stack gets **encapsulated** — each layer wraps it with a header. Going back up, each layer strips its header off.
+Data moving down the stack is **encapsulated** with a header. Moving back up the stack, each layer strips its own header off.
 
 ## TCP vs UDP
 
-**TCP** — connection-oriented. Three-way handshake before data flows:
-1. **SYN** — client initiates
-2. **SYN-ACK** — server acknowledges
-3. **ACK** — client confirms, connection established
+**TCP** is connection-oriented and begins with a three-way handshake before data flows:
 
-Guarantees delivery, ordering, and error checking. Lost packets retransmit. Used by HTTP, SSH, FTP, SMTP.
+1. **SYN** - the client initiates the connection.
+2. **SYN-ACK** - the server acknowledges.
+3. **ACK** - the client confirms, and the connection is established.
 
-**UDP** — connectionless. No handshake, no delivery guarantee, no ordering. Fast. Used by DNS, DHCP, streaming, VoIP, gaming.
+TCP guarantees delivery, ordering, and error checking. Lost packets are retransmitted. It is used by HTTP, SSH, FTP, and SMTP.
+
+**UDP** is connectionless. It has no handshake, no delivery guarantee, and no ordering, which makes it fast. It is used by DNS, DHCP, streaming, VoIP, and gaming.
 
 ### Congestion Control
 
-TCP doesn't assume the network is reliable. The sender maintains a **congestion window** — a limit on unacknowledged bytes in flight.
+TCP does not assume the network is reliable. The sender maintains a **congestion window**, a limit on unacknowledged bytes in flight.
 
-- **Slow start** — window doubles per acknowledged packet until a threshold is hit
-- **Congestion avoidance** — after the threshold, window grows linearly
-- **On packet loss** — window shrinks; sender backs off and retransmits
+- **Slow start** - the window doubles per acknowledged packet until a threshold is reached.
+- **Congestion avoidance**, after the threshold, the window grows linearly.
+- **On packet loss**, the window shrinks, and the sender backs off and retransmits.
 
-Modern Linux uses **CUBIC**; older systems use **New Reno**.
+Modern Linux systems use **CUBIC**; older systems use **New Reno**.
 
 ## IP Addressing
 
-IPv4: 32-bit addresses in dotted decimal (`192.168.1.10`). Two parts:
-- **Network portion** — which network
-- **Host portion** — which device on that network
+IPv4 addresses are 32 bits, written in dotted decimal notation (`192.168.1.10`), and consist of two parts:
 
-The **subnet mask** defines the boundary.
+- **Network portion** - identifies the network.
+- **Host portion** - identifies the device on that network.
+
+The **subnet mask** defines the boundary between the two.
 
 ### Subnetting
 
-`/24` (255.255.255.0) = 24 bits for network, 8 bits for hosts.
+`/24` (255.255.255.0) reserves 24 bits for the network and 8 bits for hosts.
 
 | CIDR | Subnet Mask     | Usable Hosts |
 | ---- | --------------- | ------------ |
@@ -81,51 +83,52 @@ Private ranges (not routable on the public internet):
 
 ### NAT
 
-Network Address Translation lets multiple devices share one public IP. The router maintains a translation table mapping internal `ip:port` pairs to the external address. Outbound traffic gets the public IP; responses get translated back.
+Network Address Translation lets multiple devices share one public IP. The router maintains a translation table mapping internal `ip:port` pairs to the external address. Outbound traffic receives the public IP; responses are translated back.
 
 ## DHCP
 
-Automatically assigns IP addresses to devices. Uses UDP ports 67 (server) and 68 (client).
+DHCP automatically assigns IP addresses to devices, using UDP ports 67 (server) and 68 (client).
 
 DORA process:
-1. **Discover** — client broadcasts looking for a server
-2. **Offer** — server offers an IP lease
-3. **Request** — client requests the offered IP
-4. **Acknowledge** — server confirms the lease
+
+1. **Discover** - the client broadcasts a request for a server.
+2. **Offer** - the server offers an IP lease.
+3. **Request** - the client requests the offered IP.
+4. **Acknowledge** - the server confirms the lease.
 
 ## ARP
 
-Resolves an IP address to a MAC address on the local network.
+ARP resolves an IP address to a MAC address on the local network.
 
-Device wants to reach `192.168.1.5` → broadcasts asking who owns that IP → owner responds with its MAC → pairing gets cached in the ARP table.
+When a device needs to reach `192.168.1.5`, it broadcasts a request asking which device owns that IP. The owner responds with its MAC address, and the pairing is cached in the ARP table.
 
 ```
 arp -a
 ```
 
-No authentication — any device can claim any IP. This enables **ARP spoofing**, where an attacker poisons nearby ARP caches to intercept traffic.
+ARP includes no authentication, so any device can claim any IP. This enables **ARP spoofing**, where an attacker poisons nearby ARP caches to intercept traffic.
 
 ## ICMP
 
-Handles error reporting and diagnostics at the network layer. Not used for data transfer.
+ICMP handles error reporting and diagnostics at the network layer and is not used for data transfer.
 
-- `ping` — ICMP Echo Requests, measures reachability and RTT
-- `traceroute` — increments TTL to map each hop to a destination
+- `ping` - sends ICMP Echo Requests to measure reachability and round-trip time.
+- `traceroute` - increments the TTL to map each hop to a destination.
 
-Often rate-limited or blocked at firewalls.
+ICMP is often rate-limited or blocked at firewalls.
 
 ## DNS
 
-DNS (Domain Name System) maps human-readable domain names to IP addresses. It's a hierarchical, distributed database. No single server holds all the answers.
+DNS (Domain Name System) maps human-readable domain names to IP addresses. It is a hierarchical, distributed database, and no single server holds all the answers.
 
 ### Who Controls the Namespace
 
-- **ICANN** — non-profit that coordinates the global DNS namespace. Contracts with registries, accredits registrars, and manages the root zone.
-- **Registries** — one per TLD, operate the authoritative nameservers for that TLD and maintain the zone file. Verisign runs `.com` (130M+ domains).
-- **Registrars** — retail layer (GoDaddy, Namecheap, Cloudflare). Sell domains to end users and report registrations to the registry.
-- **Root Zone File** — managed by ICANN and served by root nameservers, maps every TLD to its registry's nameservers.
+- **ICANN** - a non-profit that coordinates the global DNS namespace, contracts with registries, accredits registrars, and manages the root zone.
+- **Registries** - one per TLD, operate the authoritative nameservers for that TLD and maintain the zone file. Verisign runs `.com`, with more than 130 million domains.
+- **Registrars** - the retail layer (GoDaddy, Namecheap, Cloudflare). They sell domains to end users and report registrations to the registry.
+- **Root Zone File** - managed by ICANN and served by root nameservers, it maps every TLD to its registry's nameservers.
 
-When you register `example.com`: registrar → notifies Verisign → Verisign adds an NS record to the `.com` zone → your domain becomes resolvable.
+Registering `example.com` involves the registrar notifying Verisign, which adds an NS record to the `.com` zone, making the domain resolvable.
 
 ### The Hierarchy
 
@@ -136,29 +139,29 @@ Root (.)
         └── Subdomain (mail.google.com)
 ```
 
-- **Root nameservers** — 13 logical servers (labeled A–M), distributed globally via anycast. They know where every TLD's nameservers live.
-- **TLD nameservers** — operated by registries (Verisign for `.com`). They know which nameservers are authoritative for each domain.
-- **Authoritative nameservers** — hold the actual DNS records for a domain. The final word.
+- **Root nameservers** - 13 logical servers, labeled A through M, distributed globally via anycast. They know where every TLD's nameservers are located.
+- **TLD nameservers** - operated by registries, such as Verisign for `.com`. They know which nameservers are authoritative for each domain.
+- **Authoritative nameservers** - hold the actual DNS records for a domain and provide the final answer.
 
 ### Resolution
 
-When you query `mail.google.com`:
+Resolving `mail.google.com` proceeds as follows:
 
-1. Check **local cache** (browser, OS stub resolver)
-2. Ask the **recursive resolver** — usually your ISP or a public resolver like `8.8.8.8`
-3. Recursive resolver checks its cache
-4. If not cached, it queries a **root nameserver** → gets `.com` TLD nameservers
-5. Queries `.com` TLD → gets Google's authoritative nameservers
-6. Queries Google's nameserver → gets the IP for `mail.google.com`
-7. Resolver caches the result and returns it
+1. Check the **local cache** (browser, OS stub resolver).
+2. Ask the **recursive resolver**, usually an ISP resolver or a public one like `8.8.8.8`.
+3. The recursive resolver checks its own cache.
+4. If not cached, it queries a **root nameserver** and receives the `.com` TLD nameservers.
+5. It queries the `.com` TLD and receives Google's authoritative nameservers.
+6. It queries Google's nameserver and receives the IP for `mail.google.com`.
+7. The resolver caches the result and returns it.
 
-**Recursive** resolvers do the legwork on your behalf. **Authoritative** servers answer with actual records — no forwarding.
+**Recursive** resolvers perform the lookup on behalf of the client. **Authoritative** servers answer with the actual records and do not forward requests.
 
-Google returns multiple A records (IPv4) and AAAA records (IPv6). Browsers often race both in parallel using **Happy Eyeballs**, connecting on whichever responds first.
+Google returns multiple A records (IPv4) and AAAA records (IPv6). Browsers often race both in parallel using **Happy Eyeballs**, connecting through whichever responds first.
 
 ### TTL and Caching
 
-Every DNS record has a TTL (Time to Live) in seconds. Resolvers cache results until TTL expires, then re-query. Lower TTL before a migration for faster propagation; higher TTL reduces load on nameservers.
+Every DNS record has a TTL (Time to Live) in seconds. Resolvers cache results until the TTL expires, then re-query. A lower TTL before a migration allows faster propagation; a higher TTL reduces load on nameservers.
 
 ### Record Types
 
@@ -168,47 +171,48 @@ Every DNS record has a TTL (Time to Live) in seconds. Resolvers cache results un
 | AAAA   | Domain → IPv6 address                                              |
 | CNAME  | Alias from one name to another                                     |
 | MX     | Mail server for the domain (with priority)                         |
-| TXT    | Arbitrary text — SPF, DKIM, domain verification                    |
+| TXT    | Arbitrary text - SPF, DKIM, domain verification                    |
 | NS     | Authoritative nameservers for the domain                           |
-| PTR    | Reverse lookup: IP → domain name                                   |
-| SOA    | Zone metadata — primary NS, admin email, serial, refresh intervals |
-| SRV    | Service location — host, port, priority, weight                    |
+| PTR    | Reverse lookup - IP → domain name                                  |
+| SOA    | Zone metadata - primary NS, admin email, serial, refresh intervals |
+| SRV    | Service location - host, port, priority, weight                    |
 | CAA    | Which CAs are allowed to issue certs for the domain                |
 
 ### UDP vs TCP
 
-Standard queries use **UDP port 53** — fast, low overhead. TCP port 53 is used for:
+Standard queries use **UDP port 53**, which is fast and low overhead. TCP port 53 is used for:
+
 - Responses larger than 512 bytes (common with DNSSEC)
 - Zone transfers (AXFR) between nameservers
 
 ### DNSSEC
 
-Adds cryptographic signatures to DNS records so resolvers can verify a record actually came from the legitimate zone owner.
+DNSSEC adds cryptographic signatures to DNS records so resolvers can verify that a record actually came from the legitimate zone owner.
 
-- **RRSIG** — signature over a record set
-- **DNSKEY** — public key for the zone
-- **DS** — hash of a child zone's key, stored in the parent zone
+- **RRSIG** - a signature over a record set.
+- **DNSKEY** - the public key for the zone.
+- **DS** - a hash of a child zone's key, stored in the parent zone.
 
-Prevents cache poisoning but doesn't encrypt queries — that's DNS over HTTPS/TLS.
+DNSSEC prevents cache poisoning but does not encrypt queries; that function belongs to DNS over HTTPS or TLS.
 
 ### DNS over HTTPS / TLS
 
-Standard DNS is plaintext. Anyone on the path (ISP, router) can see every domain you query.
+Standard DNS is transmitted in plaintext, so anyone on the path, such as an ISP or router, can see every domain being queried.
 
-- **DoH (DNS over HTTPS)** — queries sent as HTTPS to port 443, blends in with normal web traffic
-- **DoT (DNS over TLS)** — encrypted DNS on port 853, easier to identify and block
+- **DoH (DNS over HTTPS)** - queries are sent as HTTPS on port 443, blending in with normal web traffic.
+- **DoT (DNS over TLS)** - encrypted DNS on port 853, which is easier to identify and block.
 
-Both encrypt the query. The destination IP is still visible.
+Both encrypt the query itself; the destination IP address remains visible.
 
 ### Common Attacks
 
-**Cache poisoning** — inject a forged record into a resolver's cache so victims get directed to an attacker-controlled IP. DNSSEC prevents it; randomized source ports and bailiwick rules reduce exposure.
+**Cache poisoning** - injecting a forged record into a resolver's cache so victims are directed to an attacker-controlled IP. DNSSEC prevents this; randomized source ports and bailiwick rules reduce exposure.
 
-**DNS hijacking** — compromise a registrar account or nameserver to change authoritative records. Registry locks and 2FA on registrar accounts help.
+**DNS hijacking** - compromising a registrar account or nameserver to change authoritative records. Registry locks and two-factor authentication on registrar accounts help prevent this.
 
-**DNS amplification** — send spoofed queries with the victim's IP as source. Resolver sends large responses to the victim. Used in DDoS.
+**DNS amplification** - sending spoofed queries using the victim's IP as the source. The resolver sends large responses to the victim, a technique used in DDoS attacks.
 
-**DNS tunneling** — encode data inside DNS queries and responses to exfiltrate data or tunnel C2 traffic through firewalls that allow DNS.
+**DNS tunneling** - encoding data inside DNS queries and responses to exfiltrate data or tunnel command-and-control traffic through firewalls that permit DNS.
 
 ### Tools
 
@@ -226,13 +230,13 @@ whois google.com            # registrar and registration info
 
 HTTPS requires a TLS handshake over the TCP connection:
 
-1. **ClientHello** — browser sends supported TLS versions, cipher suites, and a random value
-2. **ServerHello** — server picks a cipher suite, sends its certificate and a random value
-3. **Certificate verification** — browser validates the cert against trusted CAs, checks expiry, confirms the hostname matches
-4. **Key exchange** — browser and server derive a shared session key (via ECDHE in modern TLS)
-5. **Finished** — both sides confirm the handshake; encrypted communication begins
+1. **ClientHello** - the browser sends supported TLS versions, cipher suites, and a random value.
+2. **ServerHello** - the server selects a cipher suite and sends its certificate and a random value.
+3. **Certificate verification** - the browser validates the certificate against trusted CAs, checks expiry, and confirms the hostname matches.
+4. **Key exchange** - the browser and server derive a shared session key, typically via ECDHE in modern TLS.
+5. **Finished** - both sides confirm the handshake, and encrypted communication begins.
 
-TLS 1.3 completes this in one round trip. TLS 1.2 takes two.
+TLS 1.3 completes this exchange in one round trip; TLS 1.2 requires two.
 
 ## HTTP
 
@@ -247,22 +251,22 @@ Accept-Encoding: gzip, br
 Cookie: ...
 ```
 
-HTTP/2 multiplexes multiple requests over a single TCP connection. HTTP/3 runs over QUIC (UDP) to eliminate TCP head-of-line blocking entirely.
+HTTP/2 multiplexes multiple requests over a single TCP connection. HTTP/3 runs over QUIC (UDP), eliminating TCP head-of-line blocking entirely.
 
-If the browser has a cached copy and received an `ETag` previously, it sends an `If-None-Match` header. The server responds `304 Not Modified` with no body, and the browser serves the cached version.
+If the browser has a cached copy and previously received an `ETag`, it sends an `If-None-Match` header. The server responds with `304 Not Modified` and no body, and the browser serves the cached version.
 
-The server's response includes headers like `Strict-Transport-Security` (HSTS), which tells the browser to enforce HTTPS-only for future visits without waiting for a redirect.
+The server's response includes headers such as `Strict-Transport-Security` (HSTS), which instructs the browser to enforce HTTPS-only connections for future visits without waiting for a redirect.
 
 ## Request Flow
 
-Visiting `https://example.com`:
+Visiting `https://example.com` proceeds as follows:
 
-1. **DNS** resolves `example.com` to an IP
-2. **ARP** resolves the next-hop router's IP to a MAC
-3. **TCP SYN** to port 443
-4. **TLS handshake** — cert verified, session key derived
-5. **HTTP GET** through the encrypted tunnel
-6. Response travels back up the stack to the browser
+1. **DNS** resolves `example.com` to an IP address.
+2. **ARP** resolves the next-hop router's IP to a MAC address.
+3. A **TCP SYN** is sent to port 443.
+4. The **TLS handshake** completes. The certificate is verified and a session key is derived.
+5. An **HTTP GET** request is sent through the encrypted tunnel.
+6. The response travels back up the stack to the browser.
 
 ### Timeline
 
@@ -277,4 +281,3 @@ Visiting `https://example.com`:
 | ~30ms   | HTTP GET sent                                           |
 | ~70ms   | First byte received (TTFB)                              |
 | ~100ms+ | Page renders                                            |
-

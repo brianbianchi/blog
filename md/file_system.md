@@ -1,6 +1,6 @@
-# Linux File System
+# Understanding the Linux Filesystem
 
-Follows the [Filesystem Hierarchy Standard (FHS)](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard).
+The Linux filesystem follows the [Filesystem Hierarchy Standard (FHS)](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard).
 
 - Paths use forward slashes: `/`
 - Case-sensitive: `File.txt` ≠ `file.txt`
@@ -10,7 +10,7 @@ Follows the [Filesystem Hierarchy Standard (FHS)](https://en.wikipedia.org/wiki/
 
 ```
 /
-├── bin        → Essential binaries (ls, cat, grep) — symlink to /usr/bin on modern distros
+├── bin        → Essential binaries (ls, cat, grep), symlinked to /usr/bin on modern distros
 ├── boot       → Kernel and bootloader files
 ├── dev        → Device files (block, char, pseudo-devices like /dev/null)
 ├── etc        → System-wide config files
@@ -19,12 +19,12 @@ Follows the [Filesystem Hierarchy Standard (FHS)](https://en.wikipedia.org/wiki/
 ├── media      → Auto-mounted removable media (USB, CD)
 ├── mnt        → Temporary manual mount point
 ├── opt        → Optional third-party software
-├── proc       → Virtual FS — live kernel and process info (not on disk)
+├── proc       → Virtual filesystem, live kernel and process info (not on disk)
 ├── root       → Root user's home directory
-├── run        → Runtime data in RAM (PIDs, sockets) — cleared on reboot
-├── sbin       → System admin binaries — symlink to /usr/sbin on modern distros
+├── run        → Runtime data in RAM (PIDs, sockets), cleared on reboot
+├── sbin       → System admin binaries, symlinked to /usr/sbin on modern distros
 ├── srv        → Data served by web/FTP services
-├── sys        → Virtual FS — kernel device and driver interface
+├── sys        → Virtual filesystem, kernel device and driver interface
 ├── tmp        → Temporary files, cleared on reboot
 ├── usr        → User-installed apps, libraries, docs
 │   ├── bin    → Most user commands live here

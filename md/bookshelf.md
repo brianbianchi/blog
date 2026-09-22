@@ -11,17 +11,19 @@ Books, essays, and blogs I've read and recommend.
 - *Black Edge* - Sheelah Kolhatkar
 - *The Coddling of the American Mind* - Jonathan Haidt  
 - *Code Name: Pale Horse* - Scott Payne  
+- *The Comfort Crisis* - Michael Easter
 - *The Diary of a Young Girl* - Anne Frank  
 - *Educated* - Tara Westover  
 - *Enlightenment Now* - Steven Pinker  
 - *Escape into Meaning* - Evan Puschak  
 - *On Writing Well* - William Zinsser  
 - *Outliers* - Malcolm Gladwell
-- *The Rational Optimist* - Matt Ridley  
 - *Sapiens* - Yuval Noah Harari  
 - *Shoe Dog* - Phil Knight
 - *The Storyteller* - Dave Grohl  
+- *Tribe* - Sebastian Junger
 - *Tuesdays with Morrie* - Mitch Albom  
+- *Why We Sleep* - Matthew Walker
 
 ## Fiction
 - *11/22/63* - Stephen King  

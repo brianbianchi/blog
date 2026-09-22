@@ -1,19 +1,19 @@
-# SSH
+# Understanding ~/.ssh
 
-SSH (Secure Shell) is how you talk to a remote machine without someone in the middle being able to read or tamper with the conversation. It's encrypted, authenticated, and runs over TCP port 22. Most of the time you're using it to get a shell on a server — but it also does port forwarding, file transfers, and tunneling through firewalls.
+SSH (Secure Shell) is one way to talk to a remote machine. It's encrypted, authenticated, and runs over TCP port 22. Most of the time, it's used to get a shell on a server, but it's also used for port forwarding, file transfers, and tunneling through firewalls.
 
 ## How Authentication Works
 
-Password auth is simple: you type a password, the server checks it. Public key auth is better.
+Password authentication is straightforward. The user enters a password, and the server checks it against its records. It works, but it is the weaker of the two common methods.
 
-You generate a **key pair** — a private key you keep and a public key you share. The server stores your public key in `~/.ssh/authorized_keys`. When you connect:
+Public key authentication uses a **key pair** instead: a private key that stays on the local machine, and a public key that is distributed to servers. Once the public key is placed in a server's `~/.ssh/authorized_keys`, the connection proceeds as follows:
 
-1. Server sends a random challenge encrypted with your public key
-2. Only your private key can decrypt it
-3. Your client decrypts and sends back a signed response
-4. Server verifies the signature — if it checks out, you're in
+1. The server sends a random challenge encrypted with the public key.
+2. Only the corresponding private key can decrypt it.
+3. The client decrypts the challenge and returns a signed response.
+4. The server verifies the signature and grants access if it matches.
 
-Your private key never leaves your machine. That's the point.
+The private key never has to leave the local machine for this exchange to succeed, which is the core reason public key authentication is considered more secure than a password.
 
 ## Generating Keys
 
@@ -21,37 +21,37 @@ Your private key never leaves your machine. That's the point.
 ssh-keygen -t ed25519 -C "your@email.com"
 ```
 
-| Flag | What it does |
-| ---- | ------------ |
-| `-t` | Key type |
+| Flag | What it does                            |
+| ---- | --------------------------------------- |
+| `-t` | Key type                                |
 | `-C` | Comment (shows up in `authorized_keys`) |
-| `-f` | Output filename |
-| `-b` | Key size (RSA only) |
+| `-f` | Output filename                         |
+| `-b` | Key size (RSA only)                     |
 
-**Ed25519** is the default choice — small, fast, and secure. Use RSA 4096 only if you need to interop with something old.
+Ed25519 is the recommended default. It produces smaller keys, performs faster than RSA, and offers comparable security. RSA at 4096 bits is mainly relevant for interoperating with older systems that do not support Ed25519.
 
-Keys land in `~/.ssh/` by default:
+By default, keys are stored in `~/.ssh/`:
 
-| File | What it is |
-| ---- | ---------- |
-| `id_ed25519` | Private key — never share this |
-| `id_ed25519.pub` | Public key — safe to share |
-| `authorized_keys` | Public keys allowed to log in (server-side) |
-| `known_hosts` | Fingerprints of servers you've connected to |
-| `config` | Per-host connection settings |
+| File              | What it is                                      |
+| ----------------- | ----------------------------------------------- |
+| `id_ed25519`      | Private key. Never share this.                  |
+| `id_ed25519.pub`  | Public key. Safe to share.                      |
+| `authorized_keys` | Public keys allowed to log in (server-side)     |
+| `known_hosts`     | Fingerprints of servers previously connected to |
+| `config`          | Per-host connection settings                    |
 
-Add your public key to a server:
+To copy a key to a server:
 
 ```bash
-ssh-copy-id user@host          # copies ~/.ssh/id_*.pub
-ssh-copy-id -i ~/.ssh/key.pub user@host   # specific key
+ssh-copy-id user@host                      # copies ~/.ssh/id_*.pub
+ssh-copy-id -i ~/.ssh/key.pub user@host    # specific key
 ```
 
-Or manually append the public key to `~/.ssh/authorized_keys` on the server.
+Alternatively, the public key can be appended manually to `~/.ssh/authorized_keys` on the server.
 
 ## The Config File
 
-`~/.ssh/config` is one of the most underused tools in SSH. It lets you define aliases and defaults so you're not typing out flags every connection.
+`~/.ssh/config` is frequently overlooked. It allows connection details to be saved under a short alias, removing the need to repeat the same flags on every connection.
 
 ```
 Host myserver
@@ -70,33 +70,33 @@ Host internal
     ProxyJump bastion
 ```
 
-With that config, `ssh myserver` is all you need.
+With this configuration in place, `ssh myserver` is sufficient to connect.
 
-| Directive | What it does |
-| --------- | ------------ |
-| `HostName` | Actual address or IP |
-| `User` | Login username |
-| `Port` | Port (default 22) |
-| `IdentityFile` | Which private key to use |
-| `ProxyJump` | Hop through another host first |
-| `ForwardAgent` | Forward your local SSH agent through the connection |
-| `ServerAliveInterval` | Keepalive ping interval in seconds |
-| `StrictHostKeyChecking` | Whether to reject unknown hosts |
+| Directive               | What it does                                       |
+| ----------------------- | -------------------------------------------------- |
+| `HostName`              | Actual address or IP                               |
+| `User`                  | Login username                                     |
+| `Port`                  | Port (default 22)                                  |
+| `IdentityFile`          | Which private key to use                           |
+| `ProxyJump`             | Hop through another host first                     |
+| `ForwardAgent`          | Forward the local SSH agent through the connection |
+| `ServerAliveInterval`   | Keepalive ping interval in seconds                 |
+| `StrictHostKeyChecking` | Whether to reject unknown hosts                    |
 
-`Host *` at the top acts as a fallback for any host not matched above.
+A `Host *` block at the top of the file serves as a fallback for any host not matched by a more specific entry.
 
 ## SSH Agent
 
-The agent holds your decrypted private keys in memory so you don't retype your passphrase on every connection.
+The agent holds decrypted private keys in memory so a passphrase does not need to be entered on every connection.
 
 ```bash
-eval "$(ssh-agent -s)"    # start the agent
-ssh-add ~/.ssh/id_ed25519  # add a key
-ssh-add -l                 # list loaded keys
+eval "$(ssh-agent -s)"        # start the agent
+ssh-add ~/.ssh/id_ed25519     # add a key
+ssh-add -l                    # list loaded keys
 ssh-add -d ~/.ssh/id_ed25519  # remove a key
 ```
 
-macOS Keychain integrates with ssh-agent automatically. Add to your config to persist keys across reboots:
+On macOS, Keychain integrates with ssh-agent automatically. Adding the following to the config file allows keys to persist across reboots:
 
 ```
 Host *
@@ -104,7 +104,7 @@ Host *
     UseKeychain yes
 ```
 
-**Agent forwarding** (`ForwardAgent yes` or `-A` flag) lets a remote server use your local agent to make further SSH connections — useful when jumping through a bastion. Be careful: a compromised remote host can use your agent while it's forwarded.
+**Agent forwarding** (`ForwardAgent yes`, or the `-A` flag) allows a remote host to use the local agent to make further SSH connections, which is useful when connecting through a bastion host. This convenience carries a risk: if the remote host is compromised while forwarding is active, it can use the forwarded agent as well.
 
 ## Common Commands
 
@@ -117,8 +117,8 @@ ssh -p 2222 user@host              # custom port
 ssh user@host "df -h"
 
 # Copy files
-scp file.txt user@host:~/          # local → remote
-scp user@host:~/file.txt .         # remote → local
+scp file.txt user@host:~/          # local to remote
+scp user@host:~/file.txt .         # remote to local
 scp -r dir/ user@host:~/           # recursive
 
 # rsync (better for large/incremental transfers)
@@ -127,40 +127,40 @@ rsync -avz dir/ user@host:~/dir/
 
 ## Port Forwarding
 
-SSH can forward TCP traffic through the encrypted tunnel.
+SSH can carry arbitrary TCP traffic through its encrypted tunnel.
 
-**Local forwarding** — access a remote service as if it were local:
+**Local forwarding** makes a remote service accessible as though it were running locally:
 
 ```bash
 ssh -L 8080:localhost:3000 user@host
 # http://localhost:8080 now hits the remote's port 3000
 ```
 
-**Remote forwarding** — expose a local service on the remote server:
+**Remote forwarding** does the reverse, exposing a local service on the remote server:
 
 ```bash
 ssh -R 9090:localhost:3000 user@host
 # remote's port 9090 now hits your local port 3000
 ```
 
-**Dynamic forwarding** — SOCKS5 proxy through the remote:
+**Dynamic forwarding** turns the connection into a SOCKS5 proxy:
 
 ```bash
 ssh -D 1080 user@host
 # route traffic through the proxy at localhost:1080
 ```
 
-| Flag | Type | Direction |
-| ---- | ---- | --------- |
-| `-L local:remote` | Local | Your machine → remote |
-| `-R remote:local` | Remote | Remote machine → you |
-| `-D port` | Dynamic | SOCKS5 proxy |
-| `-N` | — | No command, just forward |
-| `-f` | — | Background the process |
+| Flag              | Type    | Direction                |
+| ----------------- | ------- | ------------------------ |
+| `-L local:remote` | Local   | Local machine to remote  |
+| `-R remote:local` | Remote  | Remote machine to local  |
+| `-D port`         | Dynamic | SOCKS5 proxy             |
+| `-N`              | None    | No command, just forward |
+| `-f`              | None    | Background the process   |
 
 ## Hardening the Server
 
-Default SSH config is fine for getting started, terrible for production. Edit `/etc/ssh/sshd_config`:
+The default `sshd` configuration is adequate for initial setup but should not be left in place on a production system. Relevant settings live in `/etc/ssh/sshd_config`:
 
 ```
 PermitRootLogin no
@@ -172,13 +172,13 @@ Port 2222
 MaxAuthTries 3
 ```
 
-Restart after changes: `sudo systemctl restart sshd`
+Restart the service after making changes: `sudo systemctl restart sshd`
 
-**fail2ban** bans IPs after repeated failed attempts. Worth running on anything internet-facing.
+**fail2ban** is worth running on any server exposed to the internet. It bans an IP address after a set number of failed login attempts, reducing the impact of automated scanning against port 22.
 
 ## Checking and Trusting Hosts
 
-First time you connect to a host, SSH shows its fingerprint and asks you to verify:
+The first connection to a new host prompts for confirmation of its fingerprint:
 
 ```
 The authenticity of host '203.0.113.42' can't be established.
@@ -186,7 +186,7 @@ ED25519 key fingerprint is SHA256:abc123...
 Are you sure you want to continue connecting?
 ```
 
-Say yes and it's added to `~/.ssh/known_hosts`. If the fingerprint changes on a future connection (server reinstalled, or someone is doing a MITM), SSH refuses with a loud warning. Check it:
+Confirming adds the fingerprint to `~/.ssh/known_hosts`. If that fingerprint changes on a later connection, SSH refuses the connection with a prominent warning, since this typically indicates either a reinstalled server or an interception attempt. A fingerprint can be checked or cleared directly:
 
 ```bash
 ssh-keyscan host 2>/dev/null | ssh-keygen -lf -   # get host fingerprint

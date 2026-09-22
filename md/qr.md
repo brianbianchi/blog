@@ -1,6 +1,7 @@
-# QR Codes
+# QR Code Formats
 
-QR codes can do a lot more than link to a website. They can connect a phone to Wi-Fi, add a calendar event, or share a contact from your native camera app.
+QR codes can encode more than a website link. They can connect a device to Wi-Fi, add a calendar event, or share a contact directly through a phone's native camera app.
+
 ## Formats
 
 ### URL
@@ -19,7 +20,7 @@ SMSTO:+12345678900:Message text here
 SMSTO::Message text here
 ```
 
-Omit the number to let the user choose the recipient after scanning.
+Omitting the number lets the user choose the recipient after scanning.
 
 ### Wi-Fi
 ```

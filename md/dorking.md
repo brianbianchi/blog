@@ -1,11 +1,11 @@
-# Google Dorking
+# Understanding Google Dorking
 
-Google search operators let you be precise in filtering results. They allow you to find exactly the file type you need, limit results to one domain, or exclude noise that pollutes your query. They can also surface things that were never meant to be public, such as exposed `.env` files, open admin panels, and database dumps sitting on misconfigured servers. Knowing what's possible makes you a better researcher, and more aware of what your own infrastructure might be leaking.
+Google search operators allow precise filtering of search results. They can limit results to a specific file type, restrict a query to one domain, or exclude noise that pollutes a search. They can also surface things that were never meant to be public, such as exposed `.env` files, open admin panels, and database dumps sitting on misconfigured servers. Knowing what is possible makes for a more effective researcher, and a better sense of what an organization's own infrastructure might be exposing.
 
 ## Tools
 
-- [pagodo](https://github.com/opsdisk/pagodo) — automates Google dork queries
-- [Google Hacking Database (GHDB)](https://www.exploit-db.com/google-hacking-database) — public dork collection
+- [pagodo](https://github.com/opsdisk/pagodo) - automates Google dork queries.
+- [Google Hacking Database (GHDB)](https://www.exploit-db.com/google-hacking-database) - a public collection of dorks.
 
 ## Filters
 
