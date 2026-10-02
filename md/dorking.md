@@ -1,4 +1,4 @@
-# Understanding Google Dorking
+# Better Searching with Google Dorking
 
 Google search operators allow precise filtering of search results. They can limit results to a specific file type, restrict a query to one domain, or exclude noise that pollutes a search. They can also surface things that were never meant to be public, such as exposed `.env` files, open admin panels, and database dumps sitting on misconfigured servers. Knowing what is possible makes for a more effective researcher, and a better sense of what an organization's own infrastructure might be exposing.
 

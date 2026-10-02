@@ -37,6 +37,7 @@ Books, essays, and blogs I've read and recommend.
 - *The Midnight Library* - Matt Haig
 - *Snow Crash* - Neal Stephenson
 - *The Three-Body Problem (series)* - Liu Cixin
+- *Wild Dark Shore* - Charlotte McConaghy
 - *Yellowface* - R. F. Kuang  
 
 ## Essays
