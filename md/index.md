@@ -1,6 +1,6 @@
 # Brian
 
-I'm a software engineer who's interested in startups, [computer vision](https://github.com/commaai/openpilot), genetics, mathematics and music. I'm currently working on [software for non-profits](https://www.blackbaud.com/), a [job tracking and analytics app for freelancers](https://bizbook.brian8.com/), and a mock financial protfolio tracker. I started this blog to get better at writing. Stay curious.
+I'm a software engineer who's interested in startups, [computer vision](https://github.com/commaai/openpilot), genetics, mathematics and music. I'm currently working on [software for non-profits](https://www.blackbaud.com/), a [job tracking and analytics app for freelancers](https://bizbook.brian8.com/), and a mock financial protfolio tracker. Stay curious.
 
 Check out what I've been reading on my [bookshelf](bookshelf.html). Follow my work on [Github](https://github.com/brianbianchi). Connect with me on [LinkedIn](https://www.linkedin.com/in/bianchibrian/).
 
