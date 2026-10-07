@@ -1,4 +1,4 @@
-# Bioinformatics notes 
+# Bioinformatics notes
 
 Bioinformatics (AKA computational biology, quantitative systems biology, theoretical / mathematical biology, or biostatistics) is a sub-field of biology that uses computation instead of lab experiments. Experimental biology is often known as **wet lab**, whereas computational biology is known as **dry lab**.
 
@@ -17,9 +17,9 @@ DNA --(transcription)--> mRNA --(translation)--> Protein
 
 Proteins do the actual work of the cell: signaling, stimulus response, metabolism, regulation, structure.
 
-## Fundamentals
+DNA being used to make a product (mRNA or protein) is also called **gene expression**. Different gene expression patterns can signal biological differences between cells (e.g. a gene expressed higher/lower in cancerous vs. healthy cells).
 
-### Cells
+## Cell Biology Basics
 
 The smallest independently functioning unit of life. Handles growth, metabolism, and reproduction. Can be a standalone organism (bacteria) or a building block of a multicellular one (humans).
 
@@ -35,15 +35,15 @@ The smallest independently functioning unit of life. Handles growth, metabolism,
 
 ### Key Organelles
 
-| Organelle    | Function                                                                                       |
-| ------------ | ---------------------------------------------------------------------------------------------- |
-| Nucleus      | Holds DNA/chromosomes; site of transcription. Eukaryotes only.                                 |
-| Nucleolus    | Combines ribosomal RNA and proteins into ribosomal subunits.                                   |
-| Ribosome     | Site of translation (protein assembly). Found in both prokaryotes and eukaryotes.              |
-| Rough ER     | Lined with ribosomes; handles protein processing and folding.                                  |
-| Smooth ER    | Not lined with ribosomes; handles lipid synthesis.                                             |
-| Golgi body   | Modifies and packages proteins and lipids.                                                     |
-| Mitochondria | Generates ATP via the Krebs (citric acid) cycle. Has its own DNA and replicates independently. |
+| Organelle    | Function                                                                                                                      |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| Nucleus      | Holds DNA/chromosomes; site of transcription. Eukaryotes only.                                                                |
+| Nucleolus    | Combines ribosomal RNA and proteins into ribosomal subunits.                                                                  |
+| Ribosome     | Site of translation (protein assembly). Found in both prokaryotes and eukaryotes.                                             |
+| Rough ER     | Lined with ribosomes; handles protein processing and folding.                                                                 |
+| Smooth ER    | Not lined with ribosomes; handles lipid synthesis.                                                                            |
+| Golgi body   | Modifies and packages proteins and lipids.                                                                                    |
+| Mitochondria | Generates ATP via cellular respiration (including the Krebs/citric acid cycle). Has its own DNA and replicates independently. |
 
 ### Plant vs. Animal Cells
 
@@ -66,9 +66,7 @@ The smallest independently functioning unit of life. Handles growth, metabolism,
 | Mitosis    | Cell division producing two identical cells, each with 2 copies of every chromosome. |
 | Meiosis    | Cell division producing gametes (egg/sperm), each with 1 copy of every chromosome.   |
 
-## Gene Expression
-
-The central dogma process (DNA → mRNA → protein) is also called **gene expression**: using information encoded in DNA to make a product (mRNA or protein). Different gene expression patterns can signal biological differences between cells (e.g. a gene expressed higher/lower in cancerous vs. healthy cells).
+## Gene Expression & Regulation
 
 ### Stability
 
@@ -86,7 +84,7 @@ Useful simplification: 1 gene → 1 mRNA → 1 protein.
 
 Not literally true. The same gene can produce multiple protein variants (**isoforms**, usually similar function) via:
 
-- Different splicing of the mRNA
+- Different splicing of the mRNA (**alternative splicing**)
 - Different transcription start/stop sites
 - Extra processing after translation
 
@@ -100,7 +98,7 @@ Some proteins (**transcription factors**) bind DNA near another gene (or their o
 - Malfunctioning regulation → disease (e.g. cancer).
 - Gene expression + gene regulation, scaled to networks of hundreds/thousands of genes, already explains a lot of cellular complexity.
 
-## DNA (Deeper Dive)
+## DNA Structure
 
 - A **nucleic acid**: a chain of nucleotides.
 - Double stranded.
@@ -117,7 +115,7 @@ Some proteins (**transcription factors**) bind DNA near another gene (or their o
 
 Each pair across the two strands = a **base pair**. One strand implies the other, so a DNA sequence is normally written as just one strand's letters.
 
-## Transcription (Deeper Dive)
+## Transcription
 
 RNA polymerase binds DNA, unzips it, and reads one strand, building a complementary strand of mRNA base by base:
 
@@ -138,19 +136,18 @@ Copying a complementary sequence also copies the information encoded in it.
 | Bases        | A, T, C, G  | A, U, C, G       |
 | Also made of | Nucleotides | Nucleotides      |
 
-## Translation (Deeper Dive)
+## Translation
 
-mRNA attaches to a ribosome. Its sequence is read in triplets called **codons**; each codon specifies one amino acid (or start/stop).
+mRNA attaches to a ribosome. Its sequence is read in triplets called **codons**; each codon specifies one amino acid, or a start/stop signal.
 
-- Some codons differing by one letter still code for the same amino acid.
-- Some codons differing by one letter code for a *different* amino acid → possibly a different, more/less functional protein. (Relevant later for the GWAS project: a one-letter DNA difference between two people can be inconsequential or consequential depending on this.)
+- Some codons differing by one letter still code for the same amino acid (**synonymous**).
+- Some codons differing by one letter code for a *different* amino acid (**missense**) → possibly a different, more/less functional protein. A one-letter DNA difference between two people can therefore be biologically inconsequential or consequential depending on which codon position it hits.
 
 Amino acids are strung together, then folded/processed into the final 3D protein structure.
 
-## Proteins (Deeper Dive)
+## Proteins
 
 - Chains of amino acids, folded into a 3D structure.
-- Alternate splicing of mRNA before translation can also produce different isoforms.
 - Functions: catalyzing metabolic reactions, structural support, signaling, regulating cellular processes, and (as transcription factors) regulating gene expression.
 
 ## Epigenetics
