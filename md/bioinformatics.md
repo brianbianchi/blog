@@ -143,7 +143,7 @@ mRNA attaches to a ribosome. Its sequence is read in triplets called **codons**;
 - Some codons differing by one letter still code for the same amino acid (**synonymous**).
 - Some codons differing by one letter code for a *different* amino acid (**missense**) → possibly a different, more/less functional protein. A one-letter DNA difference between two people can therefore be biologically inconsequential or consequential depending on which codon position it hits.
 
-Amino acids are strung together, then folded/processed into the final 3D protein structure.
+Amino acids are strung together, then folded/processed into the final 3D protein structure. A visualization can be found [here](https://www.youtube.com/watch?v=gG7uCskUOrA).
 
 ## Proteins
 
