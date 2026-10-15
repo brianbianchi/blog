@@ -164,3 +164,58 @@ Explains how cells with identical DNA (e.g. liver, hair, brain, skin cells) end 
 
 - Different cell types have different epigenetic regulation profiles → different genes expressed → different proteins → different biological roles, despite (nearly) identical DNA.
 - The process of turning generic embryonic stem cells into specialized cell types is **cell differentiation** (aka cell fate determination). The exact mechanism is still not fully understood.
+
+## Statistics
+
+A way of putting a number on coincidences, using probability theory.
+
+### The Coin Problem
+
+Is a coin fair (50/50) or biased toward one side? Flip it and count heads:
+
+| Flips | Result     | Chance a fair coin does this (or the all-tails equivalent) |
+| ----- | ---------- | ---------------------------------------------------------- |
+| 3     | All heads  | 25%                                                        |
+| 5     | All heads  | 6.25%                                                      |
+| 10    | All heads  | ~0.2%                                                      |
+| 20    | All heads  | ~0.0002%                                                   |
+| 1,000 | All heads  | ~10^-301                                                   |
+
+No row ever reaches 0%. A fair coin *can* land heads 1,000 times in a row; it would just take an extreme coincidence. Absolute certainty that a coin is biased is impossible. What statistics offers instead is the size of the coincidence.
+
+### Worked Example
+
+1. Assume nothing unusual is going on: the coin is fair. This is the **null hypothesis**.
+2. Run the experiment: 5 flips → 5 heads, 0 tails.
+3. Ask: if the coin is fair, how likely is a result at least this extreme by chance alone?
+
+```
+P(5 heads) = 0.5 × 0.5 × 0.5 × 0.5 × 0.5 = 0.5^5 = 0.03125
+P(5 heads or 5 tails) = 0.5^5 × 2 = 0.0625
+```
+
+The ×2 counts the other extreme: 5 tails would be just as surprising.
+
+So a fair coin produces a result this lopsided 6.25% of the time. Is the coin biased? Unknown, but now the coincidence has a number.
+
+### Terms
+
+| Term                   | Definition                                                                                   | Coin example         |
+| ---------------------- | -------------------------------------------------------------------------------------------- | -------------------- |
+| Null hypothesis        | The assumption that nothing unusual is going on.                                             | The coin is fair.    |
+| Alternative hypothesis | Any hypothesis other than the null.                                                          | The coin is biased.  |
+| p-value                | Probability of a result at least as extreme as the observed one, assuming the null is true. | 0.0625 (5/5 heads)   |
+
+Smaller p-value → bigger coincidence required to explain the result with the null.
+
+### Applied to Gene Expression
+
+Same reasoning, different coin. The dataset: lung tissue samples from patients with idiopathic pulmonary fibrosis (IPF) vs. healthy controls, with expression measurements for ~18,000 genes.
+
+Every gene varies randomly across samples. Suppose one gene's measurements look lower in IPF samples than in controls:
+
+- **Null hypothesis**: both groups come from the same underlying distribution; the gap is random variation.
+- **Alternative hypothesis**: there is a real difference in expression between conditions.
+- **p-value**: the probability of a gap at least this large between the groups if the null were true.
+
+Repeat for every gene, and each one gets a number on how much of a coincidence its difference would be.

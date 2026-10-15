@@ -18,11 +18,13 @@ Books, essays, and blogs I've read and recommend.
 - *Escape into Meaning* - Evan Puschak  
 - *On Writing Well* - William Zinsser  
 - *Outliers* - Malcolm Gladwell
+- *The River of Doubt* - Candice Millard
 - *Sapiens* - Yuval Noah Harari  
 - *Shoe Dog* - Phil Knight
 - *The Storyteller* - Dave Grohl  
 - *Tribe* - Sebastian Junger
 - *Tuesdays with Morrie* - Mitch Albom  
+- *A Walk in the Woods* - Bill Bryson
 - *Why We Sleep* - Matthew Walker
 
 ## Fiction
@@ -50,7 +52,8 @@ Books, essays, and blogs I've read and recommend.
 - *Politics is the Mind-Killer* - [Eliezer Yudkowsky](https://www.lesswrong.com/posts/9weLK2AJ9JEt2Tt8f/politics-is-the-mind-killer)
 - *What Silicon Valley "Gets" about Software Engineers that Traditional Companies Do Not* - [Gergely Orosz](https://blog.pragmaticengineer.com/what-silicon-valley-gets-right-on-software-engineers/)
 
-## Blogs
+## Blogs / Websites
+- *Atlas Obscura* - [atlasobscura.com](https://www.atlasobscura.com/)
 - *Derek Sivers* - [sive.rs/blog](https://sive.rs/blog)
 - *Dru Riley* - [druriley.com](https://druriley.com/)
 - *Eric Steven Raymond (ESR)* - [catb.org](http://www.catb.org/esr/)
