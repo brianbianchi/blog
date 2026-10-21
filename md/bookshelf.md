@@ -16,6 +16,7 @@ Books, essays, and blogs I've read and recommend.
 - *Educated* - Tara Westover  
 - *Enlightenment Now* - Steven Pinker  
 - *Escape into Meaning* - Evan Puschak  
+- *Man's Search for Meaning* - Viktor Frankl
 - *On Writing Well* - William Zinsser  
 - *Outliers* - Malcolm Gladwell
 - *The River of Doubt* - Candice Millard
