@@ -39,6 +39,8 @@ When every outcome is equally likely, a probability can be found without an expe
 P(A) = favorable outcomes / possible outcomes
 ```
 
+The set of all possible outcomes is called the sample space, written S (some books use Ω). For one die, S = {1, 2, 3, 4, 5, 6}.
+
 | Experiment    | Event     | Favorable | Possible | Probability |
 | ------------- | --------- | --------- | -------- | ----------- |
 | Roll a die    | Roll a 4  | 1         | 6        | 1/6         |
@@ -46,13 +48,13 @@ P(A) = favorable outcomes / possible outcomes
 | Draw a card   | 7 of hearts | 1       | 52       | 1/52        |
 | Draw a card   | Any king  | 4         | 52       | 1/13        |
 
-The complement of an event is the event not happening. One of the two must occur, so their probabilities add up to 1:
+The complement of an event A is the event that A does not happen. It is written Aᶜ, and some books use A' or Ā. One of the two must occur, so their probabilities add up to 1:
 
 ```
-P(not A) = 1 - P(A)
+P(Aᶜ) = 1 - P(A)
 ```
 
-For example, a bag holds 3 red, 2 blue, and 5 green marbles. P(blue) = 2/10, so P(not blue) = 1 - 2/10 = 4/5.
+For example, a bag holds 3 red, 2 blue, and 5 green marbles. If B is the event of drawing blue, then P(B) = 2/10 and P(Bᶜ) = 1 - 2/10 = 4/5.
 
 ## "And" and "or"
 
@@ -67,12 +69,21 @@ Suppose a made-up survey asks 100 people whether they like basketball and soccer
 - **And** means both things are true. P(basketball and soccer) = 15/100 = 3/20.
 - **Or** means at least one is true. P(basketball or soccer) counts everyone except the 25 who like neither.
 
+Probability often uses symbols for these words, borrowed from set theory:
+
+| Word | Symbol | Name         | Written  | Meaning                  |
+| ---- | ------ | ------------ | -------- | ------------------------ |
+| And  | ∩      | Intersection | A ∩ B    | In both A and B          |
+| Or   | ∪      | Union        | A ∪ B    | In A, in B, or in both   |
+
+The "or" in probability includes the case where both are true. A person who likes both sports still counts toward P(basketball ∪ soccer).
+
 Adding the two totals counts the 15 people who like both sports twice, so they are subtracted once:
 
 ```
-P(A or B) = P(A) + P(B) - P(A and B)
+P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
 
-P(basketball or soccer) = (48 + 42 - 15) / 100 = 75/100 = 3/4
+P(basketball ∪ soccer) = (48 + 42 - 15) / 100 = 75/100 = 3/4
 ```
 
 ## Conditional probability
@@ -99,15 +110,15 @@ Compare that with the whole group, where the probability is 19/30. The extra inf
 
 To find the chance of two things both happening, multiply. The method depends on whether the first event changes the odds of the second.
 
-| Type        | Meaning                                 | Formula                     |
-| ----------- | --------------------------------------- | --------------------------- |
-| Independent | The first event does not affect the second | P(A and B) = P(A) × P(B) |
-| Dependent   | The first event changes the second      | P(A and B) = P(A) × P(B given A) |
+| Type        | Meaning                                    | Formula                           |
+| ----------- | ------------------------------------------ | --------------------------------- |
+| Independent | The first event does not affect the second | P(A ∩ B) = P(A) × P(B)            |
+| Dependent   | The first event changes the second         | P(A ∩ B) = P(A) × P(B &#124; A)   |
 
 A die roll and a coin flip are independent:
 
 ```
-P(roll a 3 and flip tails) = 1/6 × 1/2 = 1/12
+P(roll a 3 ∩ flip tails) = 1/6 × 1/2 = 1/12
 ```
 
 Drawing two cards without putting the first one back is dependent. After a king is drawn, 3 kings remain in 51 cards:
@@ -132,10 +143,10 @@ That countdown multiplication is called a factorial, written with an exclamation
 | -- | - | - | - | -- | --- | --- |
 | n! | 1 | 2 | 6 | 24 | 120 | 720 |
 
-Sometimes only some positions are filled. To arrange r items chosen from n:
+Sometimes only some positions are filled. The number of ways to arrange r items chosen from n is written nPr, which is also the label on most calculators:
 
 ```
-P(n, r) = n! / (n - r)!
+nPr = n! / (n - r)!
 ```
 
 | Problem                                 | Calculation  | Result  |
@@ -147,18 +158,18 @@ P(n, r) = n! / (n - r)!
 
 A combination is a selection where order does not matter. A team of Alice, Bob, and Carol is the same as a team of Carol, Alice, and Bob.
 
-To count combinations, start with the permutations, then divide out the repeats. Each group of r items can be arranged r! ways:
+To count combinations, start with the permutations, then divide out the repeats. Each group of r items can be arranged r! ways. The result is written nCr and read "n choose r." Textbooks often write it as n stacked above r inside parentheses, and some use C(n, r):
 
 ```
-C(n, r) = n! / ((n - r)! × r!)
+nCr = n! / ((n - r)! × r!)
 ```
 
 Choosing 3 letters from A through E gives 60 permutations. Each group appears 6 times, so there are 60 / 6 = 10 combinations.
 
-Combinations are useful for "exactly this many" problems. Suppose a team of 6 is picked at random from 7 kids and 11 adults. There are C(18, 6) = 18,564 possible teams. The number of teams with exactly 1 kid is:
+Combinations are useful for "exactly this many" problems. Suppose a team of 6 is picked at random from 7 kids and 11 adults. There are 18C6 = 18,564 possible teams. The number of teams with exactly 1 kid is:
 
 ```
-C(7, 1) × C(11, 5) = 7 × 462 = 3,234
+7C1 × 11C5 = 7 × 462 = 3,234
 
 P(exactly 1 kid) = 3,234 / 18,564 ≈ 0.1742
 ```
@@ -187,6 +198,7 @@ The most famous of these curves is the normal distribution, or bell curve. Two n
 | ------ | ------------------ | ----------------------- |
 | μ      | Mean               | Where the center is     |
 | σ      | Standard deviation | How spread out it is    |
+| σ²     | Variance           | The standard deviation squared, another measure of spread |
 
 Every normal distribution follows the empirical rule:
 
@@ -230,53 +242,55 @@ The binomial distribution counts the successes in a set number of tries. It appl
 - each try has two outcomes, success or failure
 - the chance of success stays the same on every try
 
-Roll a die 4 times and count the threes. What is the chance of getting exactly 2?
+A random variable is a number determined by a chance outcome, usually named with a capital letter. Then P(X = 2) means "the probability that X equals 2."
 
-One specific order, such as three, three, other, other, has probability 1/6 × 1/6 × 5/6 × 5/6. The 2 threes can land in C(4, 2) = 6 different positions, so multiply by 6. In general, with n tries, k successes, and a success chance of p:
+Roll a die 4 times and let X be the number of threes. What is P(X = 2)?
 
-```
-P(k successes) = C(n, k) × p^k × (1 - p)^(n - k)
-
-P(2 threes) = 6 × (1/6)² × (5/6)² ≈ 0.1157
-```
-
-| Threes in 4 rolls | Probability |
-| ----------------- | ----------- |
-| 0                 | 0.4823      |
-| 1                 | 0.3858      |
-| 2                 | 0.1157      |
-| 3                 | 0.0154      |
-| 4                 | 0.0008      |
-
-The expected value is the long-run average:
+One specific order, such as three, three, other, other, has probability 1/6 × 1/6 × 5/6 × 5/6. The 2 threes can land in 4C2 = 6 different positions, so multiply by 6. In general, with n tries, k successes, and a success chance of p:
 
 ```
-expected value = n × p
+P(X = k) = nCk × p^k × (1 - p)^(n - k)
+
+P(X = 2) = 6 × (1/6)² × (5/6)² ≈ 0.1157
 ```
 
-Over 4 rolls, that is 4 × 1/6 ≈ 0.67 threes. No single game can produce 0.67 threes, but that is the average over many games.
+| k (threes in 4 rolls) | P(X = k) |
+| --------------------- | -------- |
+| 0                     | 0.4823   |
+| 1                     | 0.3858   |
+| 2                     | 0.1157   |
+| 3                     | 0.0154   |
+| 4                     | 0.0008   |
+
+The expected value is the long-run average, written E(X):
+
+```
+E(X) = n × p
+```
+
+Over 4 rolls, E(X) = 4 × 1/6 ≈ 0.67 threes. No single game can produce 0.67 threes, but that is the average over many games.
 
 ## The geometric distribution
 
 The geometric distribution asks a different question: how many tries until the first success? The conditions match the binomial, except the number of tries is not fixed.
 
-To get the first success on try k, there must be k - 1 failures followed by one success:
+Let X be the number of tries needed. To get the first success on try k, there must be k - 1 failures followed by one success:
 
 ```
-P(first success on try k) = (1 - p)^(k - 1) × p
+P(X = k) = (1 - p)^(k - 1) × p
 
-expected number of tries = 1 / p
+E(X) = 1 / p
 ```
 
 Suppose you roll a pair of dice until you get doubles. There are 6 doubles among the 36 possible rolls, so p = 1/6.
 
 ```
-P(first doubles on roll 4) = (5/6)³ × 1/6 ≈ 0.0965
+P(X = 4) = (5/6)³ × 1/6 ≈ 0.0965
 
-P(fewer than 3 rolls) = 1/6 + (5/6 × 1/6) ≈ 0.3056
+P(X < 3) = 1/6 + (5/6 × 1/6) ≈ 0.3056
 ```
 
-The expected wait is 1 / (1/6) = 6 rolls. A simulation of 20,000 games averaged 5.98.
+The expected wait is E(X) = 1 / (1/6) = 6 rolls. A simulation of 20,000 games averaged 5.98.
 
 | Roll of first doubles | Exact probability | Simulated |
 | --------------------- | ----------------- | --------- |
