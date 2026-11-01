@@ -6,6 +6,7 @@ Check out what I've been reading on my [bookshelf](bookshelf.html). Follow my wo
 
 ## Writings
 
+- [Probability and Statistics Notes](statistics.html)
 - [What I've Learned About Claude Code](claude-code.html)
 - [How Machines Learn](https://github.com/brianbianchi/notebooks/blob/master/learners.ipynb)
 - [Creating Genetic Algorithms](https://github.com/brianbianchi/notebooks/blob/master/genetics_algorithms.ipynb)

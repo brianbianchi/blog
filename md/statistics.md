@@ -1,4 +1,4 @@
-# Probability, From Coin Flips to Bell Curves
+# Probability and Statistics Notes
 
 Probability is a number between 0 and 1 that describes how likely something is. A probability of 0 means it cannot happen, and a probability of 1 means it is certain. The same value can be written three ways:
 
@@ -129,6 +129,42 @@ P(two kings in a row) = 4/52 × 3/51 = 1/221 ≈ 0.0045
 
 A simulation of 200,000 two-card draws gave 0.00445, which is very close.
 
+## Bayes' theorem
+
+P(B | A) and P(A | B) are not the same. In the student survey, P(likes school | female) = 10/14, but P(female | likes school) = 10/19. Bayes' theorem converts one into the other.
+
+The multiplication rule can be written in either order, since A ∩ B and B ∩ A are the same event:
+
+```
+P(A) × P(B | A) = P(B) × P(A | B)
+```
+
+Dividing both sides by P(B) gives the theorem:
+
+```
+P(A | B) = P(B | A) × P(A) / P(B)
+```
+
+The classic example is a medical test. Suppose a made-up disease affects 1% of people. The test correctly flags 99% of sick people, but it also wrongly flags 5% of healthy people. If a person tests positive, what is the chance they are sick?
+
+Picture 10,000 people:
+
+|         | Tests positive | Tests negative | Total  |
+| ------- | -------------- | -------------- | ------ |
+| Sick    | 99             | 1              | 100    |
+| Healthy | 495            | 9,405          | 9,900  |
+| Total   | 594            | 9,406          | 10,000 |
+
+Only the Tests positive column matters. It has 594 people, and 99 of them are sick. The theorem gives the same answer:
+
+```
+P(sick | positive) = P(positive | sick) × P(sick) / P(positive)
+
+                   = 0.99 × 0.01 / 0.0594 = 1/6 ≈ 0.167
+```
+
+A positive result means only about a 17% chance of being sick, even with an accurate test. The disease is so rare that false alarms from the large healthy group outnumber the true cases.
+
 ## Permutations
 
 A permutation is an arrangement where order matters. To count them, multiply the number of choices for each position. The letters A, B, and C can be arranged 3 × 2 × 1 = 6 ways:
@@ -185,6 +221,49 @@ Repeating this for every number of kids gives the full picture:
 | 4                | 1,925          | 0.1037      |
 | 5                | 231            | 0.0124      |
 | 6                | 7              | 0.0004      |
+
+## Variance and standard deviation
+
+The mean is the average of a data set, written μ. Variance and standard deviation measure how far values typically sit from the mean. Distances above and below the mean would cancel out if added directly, so each one is squared first:
+
+```
+μ = sum of all values / N
+
+σ² = sum of (x - μ)² / N
+
+σ = √σ²
+```
+
+Here N is the number of values. For the data set 2, 4, 4, 4, 5, 5, 7, 9, the mean is 40 / 8 = 5:
+
+| x     | x - μ | (x - μ)² |
+| ----- | ----- | -------- |
+| 2     | -3    | 9        |
+| 4     | -1    | 1        |
+| 4     | -1    | 1        |
+| 4     | -1    | 1        |
+| 5     | 0     | 0        |
+| 5     | 0     | 0        |
+| 7     | 2     | 4        |
+| 9     | 4     | 16       |
+| Total | 0     | 32       |
+
+```
+σ² = 32 / 8 = 4
+
+σ = √4 = 2
+```
+
+The variance is in squared units, such as square years. The standard deviation returns to the original units, which makes it easier to interpret.
+
+When the data is only a sample from a larger group, the sum is divided by one less than the number of values. This corrects for a sample tending to underestimate the spread of the whole group.
+
+| Data            | Number of values | Mean | Variance                  | Standard deviation |
+| --------------- | ---------------- | ---- | ------------------------- | ------------------ |
+| Whole population | N               | μ    | σ² = sum of (x - μ)² / N  | σ                  |
+| Sample          | n                | x̄    | s² = sum of (x - x̄)² / (n - 1) | s             |
+
+If the 8 values above were a sample, then s² = 32 / 7 ≈ 4.57 and s ≈ 2.14.
 
 ## The normal distribution
 
@@ -304,3 +383,46 @@ The expected wait is E(X) = 1 / (1/6) = 6 rolls. A simulation of 20,000 games av
 | 8                     | 0.0465            | 0.0469    |
 
 The most likely single outcome is getting doubles on the first roll, even though the average wait is 6 rolls. A few long streaks without doubles pull the average up.
+
+## The central limit theorem
+
+The central limit theorem explains why bell curves appear so often. When many independent random values from the same distribution are averaged, those averages follow an approximately normal distribution, even if the original values do not. A common rule of thumb is that 30 values are enough.
+
+One die is not bell-shaped, because each face has the same 1/6 chance. Adding a second die already changes the shape, since middle totals can be made in more ways:
+
+| Total of 2 dice | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+| --------------- | - | - | - | - | - | - | - | - | -- | -- | -- |
+| Ways out of 36  | 1 | 2 | 3 | 4 | 5 | 6 | 5 | 4 | 3  | 2  | 1  |
+
+With more dice, the extreme averages become rarer and the values pile up around the middle. The averages of n values have the same mean as the original distribution, and a smaller spread:
+
+```
+mean of the averages = μ
+
+standard deviation of the averages = σ / √n
+```
+
+One die has μ = 3.5 and σ ≈ 1.71. Here are 100,000 simulated averages for each number of dice:
+
+| Dice averaged | Mean of the averages | Simulated standard deviation | σ / √n |
+| ------------- | -------------------- | ---------------------------- | ------ |
+| 1             | 3.491                | 1.706                        | 1.708  |
+| 2             | 3.500                | 1.213                        | 1.208  |
+| 5             | 3.496                | 0.765                        | 0.764  |
+| 10            | 3.502                | 0.539                        | 0.540  |
+| 30            | 3.500                | 0.312                        | 0.312  |
+| 100           | 3.500                | 0.171                        | 0.171  |
+
+The law of large numbers says the average gets close to the mean. The central limit theorem adds how close it tends to be and what shape the results take.
+
+This lets z-scores answer questions about averages. What is the chance that the average of 100 die rolls is above 3.7?
+
+```
+standard deviation of the averages = 1.71 / √100 = 0.171
+
+z = (3.7 - 3.5) / 0.171 ≈ 1.17
+
+P(average > 3.7) = 1 - 0.8790 = 0.1210
+```
+
+That is about a 12% chance. A simulation of 100,000 trials gave 0.115, which is close for an approximation.
