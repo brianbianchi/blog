@@ -38,6 +38,8 @@ Books, essays, and blogs I've read and recommend.
 - *The Hitchhiker's Guide to the Galaxy* - Douglas Adams  
 - *Jurassic Park* - Michael Crichton
 - *The Midnight Library* - Matt Haig
+- *Piranesi* - Susanna Clarke
+- *Project Hail Mary* - Andy Weir
 - *Snow Crash* - Neal Stephenson
 - *The Three-Body Problem (series)* - Liu Cixin
 - *Wild Dark Shore* - Charlotte McConaghy
