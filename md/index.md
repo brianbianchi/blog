@@ -13,4 +13,5 @@ Check out what I've been reading on my [bookshelf](bookshelf.html). Follow my wo
 - [Understanding the Linux Filesystem](file_system.html)
 - [Understanding ~/.ssh](ssh.html)
 - [Probability and Statistics Notes](statistics.html)
+- [Simon Sinek's Five Rules](sinek.html)
 - [Kevin Kelly's Unsolicited Advice](advice.html)
