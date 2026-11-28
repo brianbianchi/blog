@@ -1,29 +1,29 @@
 from pathlib import Path
-import markdown
 import shutil
+import markdown
 
-if Path("dist").exists():
-    shutil.rmtree("dist")
-Path("dist").mkdir(parents=True, exist_ok=True)
+root = Path(__file__).parent
+dist = root / "dist"
 
-shutil.copy("styles.css", "dist/styles.css")
-shutil.copy("icon.png", "dist/icon.png")
+shutil.rmtree(dist, ignore_errors=True)
+dist.mkdir()
 
-with open("template.html", "r", encoding="utf-8") as f:
-    template = f.read()
+for name in ["styles.css", "icon.png"]:
+    shutil.copy(root / name, dist / name)
 
-for md_path in Path("md").glob("*.md"):
-    with open(md_path, "r", encoding="utf-8") as f:
-        md_text = f.read()
+template = (root / "template.html").read_text(encoding="utf-8")
 
-    html_body = markdown.markdown(md_text, extensions=["extra"])
+for md_path in (root / "md").glob("*.md"):
+    md_text = md_path.read_text(encoding="utf-8")
 
-    first_line = md_text.lstrip().splitlines()[0] if md_text.strip() else ""
-    title = first_line.lstrip("#").strip() if first_line.startswith("# ") else md_path.stem.replace("-", " ").title()
+    lines = md_text.strip().splitlines()
+    if lines and lines[0].startswith("# "):
+        title = lines[0][2:].strip()
+    else:
+        title = md_path.stem.replace("-", " ").title()
+
     nav = "" if md_path.stem == "index" else '<nav><a href="index.html">← Brian</a></nav>'
+    body = markdown.markdown(md_text, extensions=["extra"])
 
-    full_html = template.format(title=title, body=html_body, nav=nav)
-
-    html_path = Path("dist") / (md_path.stem + ".html")
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(full_html)
+    html = template.format(title=title, body=body, nav=nav)
+    (dist / f"{md_path.stem}.html").write_text(html, encoding="utf-8")
