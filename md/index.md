@@ -6,7 +6,8 @@ Check out what I've been reading on my [bookshelf](bookshelf.html). Follow my wo
 
 ## Writings
 
-- [What I've Learned About Claude Code](claude-code.html)
+- [Building a Feature with Agent Skills](agent-skills.html)
+- [Building Codebases Agents Can Be Trusted With](agent-trust.html)
 - [Anatomy of a Web Request](networks.html)
 - [Better Searching with Google Dorking](dorking.html)
 - [QR Code Formats](qr.html)
